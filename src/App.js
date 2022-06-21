@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate, Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 // Pages
@@ -7,6 +7,8 @@ import Landing from "./pages/public_routes/Landing";
 import About from './pages/public_routes/About';
 import TOC from './pages/public_routes/TOC';
 import Projects from './pages/public_routes/Projects';
+import Contact from './pages/public_routes/Contact';
+import Pricing from './pages/public_routes/Pricing';
 import NotFound from './pages/NotFound';
 import LogIn from './pages/account/LogIn';
 import Register from './pages/account/Register';
@@ -14,7 +16,8 @@ import ForgotPassword from './pages/account/ForgotPassword';
 import ResetPassword from './pages/account/ResetPassword';
 
 // Components
-import Header from './components/Header'
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -49,6 +52,8 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/terms' element={<TOC />} />
         <Route path='/projects' element={<Projects />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/pricing' element={<Pricing />} />
         <Route path='/login' element={<LogIn />} />
         <Route path='/register' element={<Register />} />
         <Route path='/forgotpassword' element={<ForgotPassword />} />
@@ -58,6 +63,7 @@ function App() {
         {/* Employee Route */}
         {/* Admin Route */}
       </Routes>
+      <Footer />
     </Router>
   );
 }
