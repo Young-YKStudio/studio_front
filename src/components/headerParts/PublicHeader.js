@@ -45,7 +45,6 @@ const PublicHeader = (props) => {
                 <Link to='login' className='border-indigo-500 text-grey-900 inline-flex items-center px-1 py-1 text-sm font-medium hover:text-indigo-500 '>
                   Sign in
                 </Link>
-                
               </div>
               {/* Hamburger Menu hidden */}
               <div className="-mr-2 flex items-center sm:hidden">
@@ -100,7 +99,7 @@ const PublicHeader = (props) => {
               <div className="mt-3 space-y-1">
                 <Disclosure.Button
                   as="a"
-                  href="#"
+                  href="/login"
                   className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
                 >
                   Sign in
