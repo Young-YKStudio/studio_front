@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux'
+import { toast } from 'react-toastify'
+import { register, reset } from '../../features/auth/authSlice'
+import Spinner from '../../components/spinner';
 
 const formatContactNumber = (Num) => {
   if(!Num) return Num;
@@ -19,64 +23,74 @@ const formatContactNumber = (Num) => {
 
 const Register = (props) => {
 
-  const [ username, setUsername ] = useState('');
-  const [ email, setEmail ] = useState('');
-  const [ password, setPassword ] = useState('');
-  const [ confirmPassword, setConfirmPassword] = useState('');
-  const [ contact, setContact ] = useState('');
-  const [ error, setError ] = useState('');
+  const [ formData, setFormData ] = useState({
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    contact: '',
+  });
+
+  const { username, email, password, confirmPassword, contact } = formData
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { user, isLoading, isError, isSuccess, message } = useSelector((state) => state.auth)
 
   useEffect(() => {
-    if (!!sessionStorage.authToken) {
-      navigate('/');
+    if(isError) {
+      toast.error(message)
     }
-  }, [])
+
+    if(isSuccess || user) {
+      sessionStorage.setItem('uerId', user.user.userId)
+      sessionStorage.setItem('role', user.user.role)
+      window.location.reload(false)
+      navigate('/')
+    }
+
+    dispatch(reset())
+
+  }, [user, isError, isSuccess, message, navigate, dispatch])
 
   // handlers
+  
+  const changeHandler = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }))
+  }
+  
   const phoneNumberHandler = (e) => {
     const formattedPhoneNumber = formatContactNumber(e.target.value);
-    setContact(formattedPhoneNumber)
+    setFormData((prevState) => ({
+      ...prevState,
+      ['contact']: formattedPhoneNumber,
+    }))
   }
 
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    const config = {
-      header: {
-        "Content-Type": "application/json"
-      }
-    }
-
     if(password !== confirmPassword) {
-      setPassword('');
-      setConfirmPassword('');
-      setTimeout(() => {
-        setError('')
-      },10000);
-      return setError('Passwords do not match')
-    }
-
-    try {
-      const { data } = await axios.post(`${process.env.REACT_APP_SERVER_URL}/auth/register`, {username, email, password, contact}, config)
-      
-      if (!!data.success) {
-        sessionStorage.setItem("authToken", data.token);
-        sessionStorage.setItem("role", data.role);
-        sessionStorage.setItem("userId", data.userId);
-        window.location.reload(false)
+      toast.error('Passwords do not match')
+    } else {
+      const userData = {
+        username,
+        email,
+        password,
+        contact
       }
-    } catch (error) {
-      setError('The email address has already been taken')
-      setTimeout(() => {
-        setError('');
-      }, 10000)
+
+      dispatch(register(userData))
     }
   }
 
   return (
     <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      { isLoading ? <Spinner /> : null}
       <div className="max-w-md w-full space-y-8">
         <div>
           {/* TODO: Change logo image */}
@@ -86,31 +100,24 @@ const Register = (props) => {
             alt="Workflow"
           />
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Create your account</h2>
-          {!!error ? 
-            <p className="mt-2 text-center text-sm font-medium text-indigo-500">
-              {error}
-            </p>
-          :
-          null
-          }
         </div>
         <form className="mt-8 space-y-6" onSubmit={submitHandler}>
           <input type="hidden" name="remember" defaultValue="true" />
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
-              <label htmlFor="name" className="sr-only">
+              <label htmlFor="username" className="sr-only">
                 Name
               </label>
               <input
-                id="name"
-                name="name"
+                id="username"
+                name="username"
                 type="text"
                 autoComplete="on"
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Name*"
                 value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={changeHandler}
               />
             </div>
             <div>
@@ -126,7 +133,7 @@ const Register = (props) => {
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Email address*"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={changeHandler}
               />
             </div>
             <div>
@@ -158,7 +165,7 @@ const Register = (props) => {
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Password*"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={changeHandler}
               />
             </div>
             <div>
@@ -167,14 +174,14 @@ const Register = (props) => {
               </label>
               <input
                 id="passwordConfirm"
-                name="passwordConfirm"
+                name="confirmPassword"
                 type="password"
                 autoComplete="current-password"
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Confirm password*"
                 value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
+                onChange={changeHandler}
               />
             </div>
           </div>

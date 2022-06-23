@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 // Pages
 import Landing from "./pages/public_routes/Landing";
@@ -44,27 +46,30 @@ function App() {
 
 
   return (
-    <Router>
-      <Header authUser={authUser} />
-      <Routes>
-        {/* Public Route */}
-        <Route path='/' element={<Landing />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/terms' element={<TOC />} />
-        <Route path='/projects' element={<Projects />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/pricing' element={<Pricing />} />
-        <Route path='/login' element={<LogIn />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/forgotpassword' element={<ForgotPassword />} />
-        <Route path='/resetpassword/:resetToken' element={<ResetPassword />} />
-        <Route path='*' element={<NotFound />} />
-        {/* Client Route */}
-        {/* Employee Route */}
-        {/* Admin Route */}
-      </Routes>
-      <Footer />
-    </Router>
+    <>
+      <Router>
+        <Header authUser={authUser} />
+        <Routes>
+          {/* Public Route */}
+          <Route path='/' element={<Landing />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/terms' element={<TOC />} />
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/pricing' element={<Pricing />} />
+          <Route path='/login' element={<LogIn />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/forgotpassword' element={<ForgotPassword />} />
+          <Route path='/resetpassword/:resetToken' element={<ResetPassword />} />
+          <Route path='*' element={<NotFound />} />
+          {/* Client Route */}
+          {/* Employee Route */}
+          {/* Admin Route */}
+        </Routes>
+        <Footer />
+      </Router>
+      <ToastContainer />
+    </>
   );
 }
 
