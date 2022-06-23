@@ -2,51 +2,63 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { LockClosedIcon } from '@heroicons/react/outline';
+import { useSelector, useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
+import { login, reset } from '../../features/auth/authSlice';
+import Spinner from '../../components/spinner';
+
 
 const LogIn = (props) => {
 
-  const [ email, setEmail ] = useState('');
-  const [ password, setPassword ] = useState('');
-  const [ error, setError ] = useState('');
+  const [ formData, setFormData ] = useState({
+    email: '',
+    password: '',
+  })
+
+  const { email, password } = formData
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { user, isLoading, isError, isSuccess, message } = useSelector((state) => state.auth)
+
+  const changeHandler = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }))
+  }
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const config = {
-      header: {
-        "Content-Type": "application/json"
-      }
+
+    const userData = {
+      email,
+      password,
     }
-    try {
-      const { data } = await axios.post(`${process.env.REACT_APP_SERVER_URL}/auth/login`, { email, password }, config)
-      console.log(data);
-      if(data.success === true) {
-        sessionStorage.setItem('authToken', data.token);
-        sessionStorage.setItem('role', data.role);
-        sessionStorage.setItem('userId', data.userId);
-        window.location.reload(false)
-      }
-    } catch (error) {
-      console.log(error)
-      setError('Please check your email and password again')
-    }
+
+    dispatch(login(userData))
   }
 
   useEffect(() => {
-    if (sessionStorage.role === 'employee') {
-      console.log('employee logged in')
-      // redirect to employee dash
-    } else if (sessionStorage.role === 'admin') {
-      console.log('admin logged in')
-      // redirect to admin dash
-    } else if (sessionStorage.role === 'client') {
+    if (isError) {
+      toast.error(message)
+    }
+
+    if (isSuccess || user) {
+      sessionStorage.setItem('userId', user.user.userId)
+      sessionStorage.setItem('role', user.user.role)
+      window.location.reload(false)
+      // TODO: navigate to each roles
       navigate('/')
     }
-  },[])
+
+    dispatch(reset())
+  },[user, isError, isSuccess, message, navigate, dispatch])
 
   return (
     <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      {isLoading ? <Spinner /> : null}
       <div className="max-w-md w-full space-y-8">
         <div>
           {/* TODO: Change logo image */}
@@ -56,13 +68,6 @@ const LogIn = (props) => {
             alt="Workflow"
           />
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
-          {!!error ? 
-            <p className="mt-2 text-center text-sm font-medium text-indigo-500">
-              {error}
-            </p>
-          :
-          null
-          }
         </div>
         <form className="mt-8 space-y-6" onSubmit={submitHandler}>
           <input type="hidden" name="remember" defaultValue="true" />
@@ -80,7 +85,7 @@ const LogIn = (props) => {
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Email address"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={changeHandler}
               />
             </div>
             <div>
@@ -96,7 +101,7 @@ const LogIn = (props) => {
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={changeHandler}
               />
             </div>
           </div>

@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux'
-import { toast } from 'react-toastify'
-import { register, reset } from '../../features/auth/authSlice'
+import { useSelector, useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
+import { register, reset } from '../../features/auth/authSlice';
 import Spinner from '../../components/spinner';
 
 const formatContactNumber = (Num) => {
@@ -44,7 +43,7 @@ const Register = (props) => {
     }
 
     if(isSuccess || user) {
-      sessionStorage.setItem('uerId', user.user.userId)
+      sessionStorage.setItem('userId', user.user.userId)
       sessionStorage.setItem('role', user.user.role)
       window.location.reload(false)
       navigate('/')

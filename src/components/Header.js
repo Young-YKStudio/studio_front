@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { logout, reset } from '../features/auth/authSlice';
 
 import PublicHeader from './headerParts/PublicHeader';
 import ClientHeader from './headerParts/ClientHeader';
@@ -6,17 +8,18 @@ import EmployeeHeader from './headerParts/EmployeeHeader';
 import AdminHeader from './headerParts/AdminHeader';
 
 const Header = (props) => {
-
-  // States
   // Handlers
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const logoutHandler = async (e) => {
     e.preventDefault();
     try {
+      dispatch(logout())
+      dispatch(reset())
       sessionStorage.clear();
-      navigate('/');
       window.location.reload(false)
+      navigate('/');
     } catch (error) {
       console.log(error)
     }

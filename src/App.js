@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { useSelector } from 'react-redux'
 
 // Pages
 import Landing from "./pages/public_routes/Landing";
@@ -25,12 +26,11 @@ function App() {
 
   // States
   const [ authUser, setAuthUser ] = useState('');
+  const { user } = useSelector((state) => state.auth)
 
-  // Handers
-  const role = sessionStorage.role;
   // useEffect
   useEffect(() => {
-    const setUser = () => {
+    const setUser = (role) => {
       if (role === 'admin') {
         setAuthUser('admin')
       } else if (role === 'employee') {
@@ -41,8 +41,11 @@ function App() {
         setAuthUser('public')
       }
     }
-    setUser();
-  },[role])
+    if (!!user) {
+      const role = user.user.role
+      setUser(role);
+    }
+  },[user])
 
 
   return (
