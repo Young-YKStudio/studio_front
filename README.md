@@ -21,25 +21,6 @@ clone this repo
 ```bash
   git clone
 ```
-
-create .gitignore, with includes
-```bash
-    /node_modules
-    /.pnp
-    .pnp.js
-    /coverage
-    /build
-    .DS_Store
-    .env
-    .env.local
-    .env.development.local
-    .env.test.local
-    .env.production.local
-    npm-debug.log*
-    yarn-debug.log*
-    yarn-error.log*
-```
-
 create .env, with following
 ```bash
     REACT_APP_SERVER_URL=http://localhost:8000
