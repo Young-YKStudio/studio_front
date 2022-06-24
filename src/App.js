@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -17,6 +17,10 @@ import LogIn from './pages/account/LogIn';
 import Register from './pages/account/Register';
 import ForgotPassword from './pages/account/ForgotPassword';
 import ResetPassword from './pages/account/ResetPassword';
+
+// PrivateRoutes
+import Dashboard from './pages/employee_routes/Dashboard';
+import CreditCardPortal from './pages/employee_routes/sections/CreditCardPortal';
 
 // Components
 import Header from './components/Header';
@@ -47,6 +51,32 @@ function App() {
     }
   },[user])
 
+  // Private Routes
+
+  const AdminRoute = () => {
+    if (sessionStorage.role === 'admin') {
+      return <Outlet />
+    } else {
+      return <Navigate to='/login' />
+    }
+  }
+
+  const EmployeeRoute = () => {
+    if (sessionStorage.role === 'employee' || sessionStorage.role === 'admin') {
+      return <Outlet />
+    } else {
+      return <Navigate to='/login' />
+    }
+  }
+
+  const ClientRoute = () => {
+    if (sessionStorage.role === 'client' || sessionStorage.role === 'employee' || sessionStorage.role === 'admin') {
+      return <Outlet />
+    } else {
+      return <Navigate to='/login' />
+    }
+  }
+
 
   return (
     <>
@@ -66,12 +96,32 @@ function App() {
           <Route path='/resetpassword/:resetToken' element={<ResetPassword />} />
           <Route path='*' element={<NotFound />} />
           {/* Client Route */}
+          <Route element={<ClientRoute />}>
+
+          </Route>
           {/* Employee Route */}
+          <Route element={<EmployeeRoute />}>
+            <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/cardportal' element={<CreditCardPortal />} />
+          </Route>
           {/* Admin Route */}
+          <Route element={<AdminRoute />}>
+
+          </Route>
         </Routes>
-        <Footer />
+        <Footer authUser={authUser}/>
       </Router>
-      <ToastContainer />
+      <ToastContainer 
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 }

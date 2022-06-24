@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+// TODO: toast function, details -> https://fkhadra.github.io/react-toastify/introduction
 
 const ResetPassword = (props) => {
 

@@ -42,7 +42,15 @@ const LogIn = (props) => {
 
   useEffect(() => {
     if (isError) {
-      toast.error(message)
+      toast.error(message, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
     }
 
     if (isSuccess || user) {

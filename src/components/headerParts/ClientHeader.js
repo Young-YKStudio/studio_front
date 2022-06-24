@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon, ShoppingBagIcon } from '@heroicons/react/outline'
+import { MenuIcon, XIcon, ShoppingBagIcon } from '@heroicons/react/outline'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -175,14 +175,6 @@ const ClientHeader = (props) => {
         </>
       )}
     </Disclosure>
-    // <div className='header_container'>
-    //   <div>logo here</div>
-    //   <ul className='header_items'>
-    //     <li>Private Route - Client</li>
-    //     <li><Link to='/projects'>Projects</Link></li>
-    //     <li><button onClick={props.logoutHandler}>Log Out</button></li>
-    //   </ul>
-    // </div>
   );
 }
 export default ClientHeader;
