@@ -26,7 +26,6 @@ const Dashboard = (props) => {
       <Navigate to='/dashboard' replace={false} />
     } else if (text === 'Card Portal') {
       setCurrentWindow('Card Portal');
-      console.log('clicked', currentWindow);
       <Navigate to='/cardportal' replace={false} />
     }
   }
@@ -39,7 +38,7 @@ const Dashboard = (props) => {
   return (
     <div className="flex flex-row">
       <DashboardNav currentWindow={currentWindow} changeCurrentWindowChanger={changeCurrentWindowChanger}/>
-      <div className="rightside_container">
+      <div className="rightside_container w-full p-7">
         {windowSelector(currentWindow)}
       </div>
     </div>
