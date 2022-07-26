@@ -4,6 +4,8 @@ import PaymentAmount from './PaymentAmount';
 import CheckOutComplete from './CheckOutComplete';
 import CardInfo from './CardInfo';
 import StripeSetup from './StripeSetup';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
 
 let steps = [
 ]

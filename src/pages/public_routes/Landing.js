@@ -1,17 +1,22 @@
-import Catchy from "../landing_parts/Catchy";
-import Approach from "../landing_parts/Approach";
-import Contact from '../landing_parts/Contact';
-import Projects from "../landing_parts/Projects";
+import { motion } from 'framer-motion'
 
+import Catchy from "./landing_parts/Catchy";
+import Contact from './landing_parts/Contact';
+import Projects from "./landing_parts/Projects";
+import Intro from "./landing_parts/Intro";
+import Services from "./landing_parts/Services";
+import Experts from './landing_parts/Experts';
 
 const Landing = (props) => {
   return (
-    <div>
+    <motion.div key='motion1' exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: .5 }}>
+      <Intro />
       <Catchy />
-      <Approach />
-      <Projects />
+      <Services />
+      <Experts />
+      {/* <Projects /> */}
       <Contact />
-    </div>
+    </motion.div>
   );
 }
 export default Landing;

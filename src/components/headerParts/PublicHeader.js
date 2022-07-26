@@ -9,7 +9,7 @@ const PublicHeader = (props) => {
 
   return (
     <Disclosure as='nav' className='bg-white shadow'>
-      {({ open}) => (
+      {({open}) => (
         <>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='flex justify-between h-16'>
@@ -19,30 +19,30 @@ const PublicHeader = (props) => {
                   {/* TODO: logo with text */}
                     <img
                       className="block h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
+                      src="/img/YKlogo.png"
                       alt="Workflow"
                     />
                   </Link>
                 </div>
                 {/* Left side of the nav */}
                 <div className='hidden sm:ml-6 sm:flex sm:space-x-8'>
-                  <Link to='/projects' className='border-indigo-500 text-gray-900 inline-flex items-center px-1 py-1 text-sm font-medium hover:text-indigo-500'>
+                  <Link to='/construction' className='text-gray-900 inline-flex items-center px-1 py-1 text-sm font-medium hover:text-yellow-600'>
+                    Services
+                  </Link>
+                  <Link to='/construction' className='text-gray-900 inline-flex items-center px-1 py-1 text-sm font-medium hover:text-yellow-600'>
                     Projects
                   </Link>
-                  <Link to='/pricing' className='border-indigo-500 text-gray-900 inline-flex items-center px-1 py-1 text-sm font-medium hover:text-indigo-500'>
-                    Pricing
-                  </Link>
-                  <Link to='/contact' className='border-indigo-500 text-gray-900 inline-flex items-center px-1 py-1 text-sm font-medium hover:text-indigo-500'>
+                  <Link to='/contact/form' className='text-gray-900 inline-flex items-center px-1 py-1 text-sm font-medium hover:text-yellow-600'>
                     Contact
                   </Link>
-                  <Link to='/about' className='border-indigo-500 text-gray-900 inline-flex items-center px-1 py-1 text-sm font-medium hover:text-indigo-500'>
+                  <Link to='/construction' className='text-gray-900 inline-flex items-center px-1 py-1 text-sm font-medium hover:text-yellow-600'>
                     About
                   </Link>
                 </div>
               </div>
               {/* Right side of the nav */}
               <div className="hidden sm:ml-6 sm:flex sm:items-center">
-                <Link to='login' className='border-indigo-500 text-grey-900 inline-flex items-center px-1 py-1 text-sm font-medium hover:text-indigo-500 '>
+                <Link to='login' className='text-grey-900 inline-flex items-center px-1 py-1 text-sm font-medium hover:text-yellow-600 '>
                   Sign in
                 </Link>
               </div>
@@ -67,29 +67,29 @@ const PublicHeader = (props) => {
               {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
               <Disclosure.Button
                 as="a"
-                href="/projects"
-                className="border-transparent text-gray-500 hover:bg-indigo-50 hover:border-indigo-500 hover:text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                href="/construction"
+                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-yellow-700 hover:text-yellow-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
                 Projects
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/pricing"
-                className="border-transparent text-gray-500 hover:bg-indigo-50 hover:border-indigo-500 hover:text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                href="/construction"
+                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-yellow-700 hover:text-yellow-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
                 Pricing
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/contact"
-                className="border-transparent text-gray-500 hover:bg-indigo-50 hover:border-indigo-500 hover:text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                href="/contact/form"
+                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-yellow-700 hover:text-yellow-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
                 Contact
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/about"
-                className="border-transparent text-gray-500 hover:bg-indigo-50 hover:border-indigo-500 hover:text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                href="/construction"
+                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-yellow-700 hover:text-yellow-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
                 About
               </Disclosure.Button>
@@ -100,7 +100,7 @@ const PublicHeader = (props) => {
                 <Disclosure.Button
                   as="a"
                   href="/login"
-                  className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
+                  className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-yellow-700 hover:text-yellow-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
                 >
                   Sign in
                 </Disclosure.Button>

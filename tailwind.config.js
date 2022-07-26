@@ -1,5 +1,6 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-const forms = require('@tailwindcss/forms')
+const defaultTheme = require('tailwindcss/defaultTheme');
+const forms = require('@tailwindcss/forms');
+const aspectRatio = require('@tailwindcss/aspect-ratio');
 
 module.exports = {
   content: [
@@ -9,10 +10,14 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-      }
+      },
+      spacing: {
+        'custom': '38rem',
+      },
     },
   },
   plugins: [
     forms,
+    aspectRatio
   ],
 }
