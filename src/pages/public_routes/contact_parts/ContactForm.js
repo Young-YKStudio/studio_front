@@ -202,7 +202,7 @@ const ContactForm = (props) => {
         </div>
       </>
     } else {
-      return 'initial'
+      return null
     }
   }
 
