@@ -1,6 +1,11 @@
+import { motion } from 'framer-motion';
+
 const ContactSuccess = (props) => {
   return (
-    <div className="bg-white">
+    <motion.div 
+      className="bg-white"
+      exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: .5 }}
+    >
       <div className="relative bg-gray-900">
         {/* Decorative image and overlay */}
         <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
@@ -25,7 +30,7 @@ const ContactSuccess = (props) => {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 export default ContactSuccess;

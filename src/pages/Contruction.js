@@ -1,6 +1,12 @@
+import { motion } from 'framer-motion';
+
 const Construction = (props) => {
   return (
-    <div className="bg-white min-h-full px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
+    <motion.div
+      className="bg-white min-h-full px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8"
+      key='construction'
+      exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: .5 }}
+    >
       <div className="max-w-max mx-auto">
         <main className="sm:flex">
           <p className="text-4xl font-extrabold text-yellow-600 sm:text-5xl">Oops!</p>
@@ -20,7 +26,7 @@ const Construction = (props) => {
           </div>
         </main>
       </div>
-    </div>
+    </motion.div>
   );
 }
 export default Construction;
