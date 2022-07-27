@@ -41,8 +41,8 @@ const ForgotPassword = (props) => {
           {/* TODO: Change logo image */}
           <img
             className="mx-auto h-12 w-auto"
-            src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-            alt="Workflow"
+            src="/img/YKlogo.png"
+            alt="YK logo"
           />
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Reset your password</h2>
           <p className='mt-2 text-center text-sm font-light leading-6 pt-4'>Please enter the email address you registered your account with.<br /> We will send you reset password confirmation to this email.</p>
@@ -72,7 +72,7 @@ const ForgotPassword = (props) => {
                 type="email"
                 autoComplete="email"
                 required
-                className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-yellow-600 focus:border-yellow-600 focus:z-10 sm:text-sm"
                 placeholder="Email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -82,7 +82,7 @@ const ForgotPassword = (props) => {
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-black hover:bg-yellow-600 focus:outline-none"
             >
               Send Confirmation Email
             </button>

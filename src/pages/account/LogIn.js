@@ -72,8 +72,8 @@ const LogIn = (props) => {
           {/* TODO: Change logo image */}
           <img
             className="mx-auto h-12 w-auto"
-            src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-            alt="Workflow"
+            src="/img/YKlogo.png"
+            alt="yk logo"
           />
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
         </div>
@@ -90,7 +90,7 @@ const LogIn = (props) => {
                 type="email"
                 autoComplete="email"
                 required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-yellow-600 focus:border-yellow-600 focus:z-10 sm:text-sm"
                 placeholder="Email address"
                 value={email}
                 onChange={changeHandler}
@@ -106,7 +106,7 @@ const LogIn = (props) => {
                 type="password"
                 autoComplete="current-password"
                 required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-yellow-600 focus:border-yellow-600 focus:z-10 sm:text-sm"
                 placeholder="Password"
                 value={password}
                 onChange={changeHandler}
@@ -117,10 +117,10 @@ const LogIn = (props) => {
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-black hover:bg-yellow-600 focus:outline-none"
             >
               <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
+                <LockClosedIcon className="h-5 w-5 text-gray-600 group-hover:text-white" aria-hidden="true" />
               </span>
               Sign in
             </button>
@@ -128,11 +128,11 @@ const LogIn = (props) => {
 
           <div className='flex items-center justify-center text-sm'>
             <p className='mr-4'>Don't have an account?</p>
-            <Link to='/register' className='text-indigo-600 hover:text-indigo-500 font-medium'>Create Account</Link>
+            <Link to='/register' className='text-yellow-600 hover:text-black font-medium'>Create Account</Link>
           </div>
 
           <div className='flex items-center justify-center text-sm'>
-            <Link to='/forgotpassword' className='font-medium text-indigo-600 hover:text-indigo-500'>Forgot your password?</Link>
+            <Link to='/forgotpassword' className='font-medium text-yellow-600 hover:text-black'>Forgot your password?</Link>
           </div>
         </form>
       </div>
