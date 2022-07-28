@@ -14,6 +14,13 @@ module.exports = {
       spacing: {
         'custom': '38rem',
       },
+      backgroundImage: theme => ({
+        'Consulting': "url('./img/Consulting_Photo.jpg')",
+        'Design': "url('./img/Design_Photo.jpg')",
+        'Develop': "url('./img/Develop_Photo.jpg')",
+        'Marketing': "url('./img/Digital-Marketing.png')",
+        'Service': "url('./img/Service_Photo.jpg')"
+      })
     },
   },
   plugins: [

@@ -1,13 +1,6 @@
-import { Disclosure, Popover, Transition } from '@headlessui/react';
+import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import { Link } from 'react-router-dom';
 import {
-  ChartBarIcon,
-  CursorClickIcon,
-  DocumentReportIcon,
-  RefreshIcon,
-  ShieldCheckIcon,
-  ViewGridIcon,
   ChatAlt2Icon,
   CubeTransparentIcon,
   CubeIcon,
@@ -17,6 +10,7 @@ import {
 } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Fragment } from 'react';
+import './PublicHeader.css'
 
 const solutions = [
   {
@@ -64,13 +58,16 @@ const PublicHeader = (props) => {
     <Popover className="relative bg-white">
       <div className="flex justify-between items-center px-4 py-6 sm:px-6 md:justify-start md:space-x-10">
         <div className="flex justify-start lg:w-0 lg:flex-1">
-          <a href="/">
-            <span className="sr-only">YKStudio</span>
+          <a 
+          href="/"
+          className='flex flex-row'
+          >
             <img
               className="h-8 w-auto sm:h-10"
               src="/img/YKlogo.png"
               alt="yk logo"
             />
+            <span className="logo-title">Studio</span>
           </a>
         </div>
         <div className="-mr-2 -my-2 md:hidden">
@@ -128,7 +125,7 @@ const PublicHeader = (props) => {
                         ))}
                       </div>
                       <div className="p-5 bg-gray-50 sm:p-8">
-                        <a href="#" className="-m-3 p-3 flow-root rounded-md hover:bg-gray-100 text-gray-900 hover:text-yellow-600">
+                        <a href="/construction" className="-m-3 p-3 flow-root rounded-md hover:bg-gray-100 text-gray-900 hover:text-yellow-600">
                           <div className="flex items-center">
                             <div className="text-base font-medium flex flex-row">See Solutions in Detail<ArrowRightIcon className='w-4 h-4 mt-1 ml-2'/></div>
                           </div>
@@ -172,12 +169,13 @@ const PublicHeader = (props) => {
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
-                <div>
+                <div className='flex flex-row'>
                   <img
                     className="h-8 w-auto"
                     src="/img/YKlogo.png"
                     alt="YK logo"
                   />
+                  <p className='logo-title'>Studio</p>
                 </div>
                 <div className="-mr-2">
                   <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
@@ -230,108 +228,6 @@ const PublicHeader = (props) => {
         </Popover.Panel>
       </Transition>
     </Popover>
-    // <Disclosure as='nav' className='bg-white shadow'>
-    //   {({open}) => (
-    //     <>
-    //       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-    //         <div className='flex justify-between h-16'>
-    //           <div className='flex'>
-    //             <div className='flex-shrink-0 flex items-center'>
-    //               <Link to='/'>
-    //               {/* TODO: logo with text */}
-    //                 <img
-    //                   className="block h-8 w-auto"
-    //                   src="/img/YKlogo.png"
-    //                   alt="Workflow"
-    //                 />
-    //               </Link>
-    //             </div>
-    //             {/* Left side of the nav */}
-    //             <div className='hidden sm:ml-6 sm:flex sm:space-x-8'>
-    //               <Link to='/construction' className='text-gray-900 inline-flex items-center px-1 py-1 text-sm font-medium hover:text-yellow-600'>
-    //                 Services
-    //               </Link>
-    //               <Link to='/construction' className='text-gray-900 inline-flex items-center px-1 py-1 text-sm font-medium hover:text-yellow-600'>
-    //                 Projects
-    //               </Link>
-    //               <Link to='/contact/form' className='text-gray-900 inline-flex items-center px-1 py-1 text-sm font-medium hover:text-yellow-600'>
-    //                 Contact
-    //               </Link>
-    //               <Link to='/construction' className='text-gray-900 inline-flex items-center px-1 py-1 text-sm font-medium hover:text-yellow-600'>
-    //                 About
-    //               </Link>
-    //             </div>
-    //           </div>
-    //           {/* Right side of the nav */}
-    //           <div className="hidden sm:ml-6 sm:flex sm:items-center">
-    //             <Link to='login' className='text-grey-900 inline-flex items-center px-1 py-1 text-sm font-medium hover:text-yellow-600 '>
-    //               Sign in
-    //             </Link>
-    //           </div>
-    //           {/* Hamburger Menu hidden */}
-    //           <div className="-mr-2 flex items-center sm:hidden">
-    //             {/* Mobile menu button */}
-    //             <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100">
-    //               <span className="sr-only">Open main menu</span>
-    //               {open ? (
-    //                 <XIcon className="block h-6 w-6" aria-hidden="true" />
-    //               ) : (
-    //                 <MenuIcon className="block h-6 w-6" aria-hidden="true" />
-    //               )}
-    //             </Disclosure.Button>
-    //           </div>
-    //         </div>
-    //       </div>
-    //       {/* hidden menu pop up */}
-    //       <Disclosure.Panel className="sm:hidden">
-    //         {/* nav section */}
-    //         <div className="pt-2 pb-3 space-y-1">
-    //           {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
-    //           <Disclosure.Button
-    //             as="a"
-    //             href="/construction"
-    //             className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-yellow-700 hover:text-yellow-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-    //           >
-    //             Projects
-    //           </Disclosure.Button>
-    //           <Disclosure.Button
-    //             as="a"
-    //             href="/construction"
-    //             className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-yellow-700 hover:text-yellow-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-    //           >
-    //             Pricing
-    //           </Disclosure.Button>
-    //           <Disclosure.Button
-    //             as="a"
-    //             href="/contact/form"
-    //             className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-yellow-700 hover:text-yellow-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-    //           >
-    //             Contact
-    //           </Disclosure.Button>
-    //           <Disclosure.Button
-    //             as="a"
-    //             href="/construction"
-    //             className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-yellow-700 hover:text-yellow-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-    //           >
-    //             About
-    //           </Disclosure.Button>
-    //         </div>
-    //         {/* Account section */}
-    //         <div className="pt-4 pb-3 border-t border-gray-200">
-    //           <div className="mt-3 space-y-1">
-    //             <Disclosure.Button
-    //               as="a"
-    //               href="/login"
-    //               className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-yellow-700 hover:text-yellow-600 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
-    //             >
-    //               Sign in
-    //             </Disclosure.Button>
-    //           </div>
-    //         </div>
-    //       </Disclosure.Panel>
-    //     </>
-    //   )}
-    // </Disclosure>
   );
 }
 export default PublicHeader;
