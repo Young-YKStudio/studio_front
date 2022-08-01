@@ -22,7 +22,11 @@ module.exports = {
         'Design': "url('./img/Design_Photo.jpg')",
         'Develop': "url('./img/Develop_Photo.jpg')",
         'Marketing': "url('./img/Digital-Marketing.png')",
-        'Service': "url('./img/Service_Photo.jpg')"
+        'Service': "url('./img/Service_Photo.jpg')",
+        'Restaurant': "url('./img/restaurant_photo.jpg')",
+        'Hair': "url('./img/hair_photo.jpeg')",
+        'eCommerce': "url('./img/ecommerce_photo.jpeg')",
+        'Doctor': "url('./img/doctor_photo2.jpg')",
       })
     },
   },

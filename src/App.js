@@ -12,7 +12,7 @@ import About from './pages/public_routes/About';
 import TOC from './pages/public_routes/TOC';
 import Projects from './pages/public_routes/Projects';
 import Contact from './pages/public_routes/Contact';
-import Services from './pages/public_routes/Services';
+import Solutions from './pages/public_routes/Solutions';
 import NotFound from './pages/NotFound';
 import LogIn from './pages/account/LogIn';
 import Register from './pages/account/Register';
@@ -21,6 +21,14 @@ import ResetPassword from './pages/account/ResetPassword';
 import Construction from './pages/Contruction';
 import ContactForm from './pages/public_routes/contact_parts/ContactForm';
 import ContactSuccess from './pages/public_routes/contact_parts/ContactSuccess';
+
+// Pages-solution
+import Solution from './pages/public_routes/solutions_parts/Solution';
+import Restaurant from './pages/public_routes/solutions_parts/Restaurant';
+import Nail from './pages/public_routes/solutions_parts/Nail';
+import Commerce from './pages/public_routes/solutions_parts/Commerce';
+import Practices from './pages/public_routes/solutions_parts/Practices';
+import Customized from './pages/public_routes/solutions_parts/Customized';
 
 // PrivateRoutes
 import Dashboard from './pages/employee_routes/Dashboard';
@@ -97,8 +105,23 @@ function App() {
                 <Route path='form' element={<ContactForm />} />
                 <Route path='success' element={<ContactSuccess />} />
               </Route>
-              <Route path='services' element={<Services />} >
-                
+              <Route path='solutions' element={<Solutions />} >
+                <Route path='solutions' element={<Solution />} />
+                <Route path='restaurants' element={<Restaurant />} >
+                  
+                </Route>
+                <Route path='nail&Hair' element={<Nail />} >
+
+                </Route>
+                <Route path='eCommerces' element={<Commerce />} >
+
+                </Route>
+                <Route path='practices' element={<Practices />} >
+
+                </Route>
+                <Route path='customized' element={<Customized />} >
+
+                </Route>
               </Route>
               <Route path='login' element={<LogIn />} />
               <Route path='register' element={<Register />} />

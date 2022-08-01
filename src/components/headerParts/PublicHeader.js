@@ -32,7 +32,7 @@ const solutions = [
     icon: CubeIcon,
   },
   {
-    name: 'Digital Products & Marketing',
+    name: 'Digital Marketing',
     description: 'Make things better for reality. Advertising and marketing that pushes projects to success.',
     href: '/construction',
     icon: PresentationChartBarIcon,
@@ -44,6 +44,35 @@ const solutions = [
     icon: UserGroupIcon,
   },
 ];
+
+const packages = [
+  {
+    name: 'Restaurants',
+    description: 'Online orders, Online Payments, Reservations, all-in-one.',
+    href: '/construction',
+    icon: ChatAlt2Icon,
+  },
+  {
+    name: 'Nail | Hair Salons',
+    description: 'Online reservations, Designer reserve, Schedules.',
+    href: '/construction',
+    icon: CubeTransparentIcon,
+  },
+  {
+    name: 'eCommerces',
+    description: "Stock management, Order management, Payment gateway",
+    href: '/construction',
+    icon: CubeIcon,
+  },
+  {
+    name: 'Individual Practices',
+    description: 'Email & SMS Schedules, Online Reservations, Patient Database',
+    href: '/construction',
+    icon: PresentationChartBarIcon,
+  },
+];
+
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -77,6 +106,66 @@ const PublicHeader = (props) => {
           </Popover.Button>
         </div>
         <Popover.Group as="nav" className="hidden md:flex space-x-10">
+        <Popover className="relative">
+            {({ open }) => (
+              <>
+                <Popover.Button
+                  className={classNames(
+                    open ? 'text-yellow-600' : 'text-gray-500',
+                    'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-yellow-600 focus:outline-none focus:text-yellow-600'
+                  )}
+                >
+                  <span>Packages</span>
+                  <ChevronDownIcon
+                    className={classNames(
+                      open ? 'text-yellow-600' : 'text-gray-400',
+                      'ml-2 h-5 w-5 group-hover:text-yellow-600'
+                    )}
+                    aria-hidden="true"
+                  />
+                </Popover.Button>
+
+                <Transition
+                  as={Fragment}
+                  enter="transition ease-out duration-200"
+                  enterFrom="opacity-0 translate-y-1"
+                  enterTo="opacity-100 translate-y-0"
+                  leave="transition ease-in duration-150"
+                  leaveFrom="opacity-100 translate-y-0"
+                  leaveTo="opacity-0 translate-y-1"
+                >
+                  <Popover.Panel className="absolute z-20 -ml-4 mt-3 transform w-screen max-w-md lg:max-w-2xl lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+                    <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+                      <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2">
+                        {packages.map((pkg) => (
+                          <a
+                            key={pkg.name}
+                            href={pkg.href}
+                            className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
+                          >
+                            <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-yellow-600 text-white sm:h-12 sm:w-12">
+                              <pkg.icon className="h-6 w-6" aria-hidden="true" />
+                            </div>
+                            <div className="ml-4">
+                              <p className="text-base font-medium text-gray-900">{pkg.name}</p>
+                              <p className="mt-1 text-sm text-gray-500">{pkg.description}</p>
+                            </div>
+                          </a>
+                        ))}
+                      </div>
+                      <div className="p-5 bg-gray-50 sm:p-8">
+                        <a href="/solutions" className="-m-3 p-3 flow-root rounded-md hover:bg-gray-100 text-gray-900 hover:text-yellow-600">
+                          <div className="flex items-center">
+                            <div className="text-base font-medium flex flex-row">See Packages in Detail<ArrowRightIcon className='w-4 h-4 mt-1 ml-2'/></div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </Popover.Panel>
+                </Transition>
+              </>
+            )}
+          </Popover>
           <Popover className="relative">
             {({ open }) => (
               <>
@@ -125,7 +214,7 @@ const PublicHeader = (props) => {
                         ))}
                       </div>
                       <div className="p-5 bg-gray-50 sm:p-8">
-                        <a href="/construction" className="-m-3 p-3 flow-root rounded-md hover:bg-gray-100 text-gray-900 hover:text-yellow-600">
+                        <a href="/solutions" className="-m-3 p-3 flow-root rounded-md hover:bg-gray-100 text-gray-900 hover:text-yellow-600">
                           <div className="flex items-center">
                             <div className="text-base font-medium flex flex-row">See Solutions in Detail<ArrowRightIcon className='w-4 h-4 mt-1 ml-2'/></div>
                           </div>
@@ -138,14 +227,12 @@ const PublicHeader = (props) => {
             )}
           </Popover>
 
-          <a href="/contact/form" className="text-base font-medium text-gray-500 hover:text-yellow-600">
-            Contact
-          </a>
+
           <a href="/construction" className="text-base font-medium text-gray-500 hover:text-yellow-600">
             Our Work
           </a>
-          <a href="/construction" className="text-base font-medium text-gray-500 hover:text-yellow-600">
-            Studio
+          <a href="/contact/form" className="text-base font-medium text-gray-500 hover:text-yellow-600">
+            Contact
           </a>
 
         </Popover.Group>
@@ -185,7 +272,8 @@ const PublicHeader = (props) => {
                 </div>
               </div>
               <div className="mt-6">
-                <nav className="grid grid-cols-1 gap-7">
+                <h3 className='font-bold text-lg mb-4'>Solutions</h3>
+                <nav className="grid grid-cols-2 gap-7">
                   {solutions.map((solution) => (
                     <a
                       key={solution.name}
@@ -199,20 +287,34 @@ const PublicHeader = (props) => {
                     </a>
                   ))}
                 </nav>
+                <h3 className='font-bold text-lg my-4'>Packages</h3>
+                <nav className="grid grid-cols-2 gap-7">
+                  {packages.map((pkg) => (
+                    <a
+                      key={pkg.name}
+                      href={pkg.href}
+                      className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
+                    >
+                      <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-yellow-600 text-white">
+                        <pkg.icon className="h-6 w-6" aria-hidden="true" />
+                      </div>
+                      <div className="ml-4 text-base font-medium text-gray-900">{pkg.name}</div>
+                    </a>
+                  ))}
+                </nav>
               </div>
             </div>
             <div className="py-6 px-5">
               <div className="grid grid-cols-2 gap-4">
-                <a href="/contact/form" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                  Contact
-                </a>
-
                 <a href="/construction" className="text-base font-medium text-gray-900 hover:text-gray-700">
                   Our Work
                 </a>
 
                 <a href="/construction" className="text-base font-medium text-gray-900 hover:text-gray-700">
                   Studio
+                </a>
+                <a href="/contact/form" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                  Contact
                 </a>
               </div>
               <div className="mt-6">

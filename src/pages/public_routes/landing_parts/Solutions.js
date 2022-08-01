@@ -325,8 +325,8 @@ const Solutions = (props) => {
                         <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> SSL Certification</li>
                         <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> Email / SMS Marketing</li>
                         <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> PPC Campaigns</li>
-                        <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> SNS banner Ads</li>
-                        <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> Influencer Marketings</li>
+                        <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> SNS Marketing</li>
+                        <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> Influencer Marketing</li>
                       </ul>
                     </div>
                     <div className='px-4 py-4 pt-2'>
@@ -382,9 +382,9 @@ const Solutions = (props) => {
                       <ul className='grid grid-cols-2 text-white mb-2 pb-2'>
                         <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> Maintenance</li>
                         <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> Email | Call Support</li>
-                        <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> On-Site support</li>
+                        <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> On-Site Support</li>
                         <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> Service Renewals</li>
-                        <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> Update support</li>
+                        <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> Update Support</li>
                         <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> Coaching Specialists</li>
                       </ul>
                     </div>
@@ -442,7 +442,7 @@ const Solutions = (props) => {
                         <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> Examine requirements</li>
                         <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> Price Quotes</li>
                         <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> Lead Time Quotes</li>
-                        <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> Breif introductions</li>
+                        <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 text-white mr-1' /> Brief introductions</li>
                       </ul>
                     </div>
                   </div>
