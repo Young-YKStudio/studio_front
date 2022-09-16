@@ -1,6 +1,12 @@
+import { Outlet } from 'react-router-dom';
+import SecondNavRestaurant from '../../../components/headerParts/SecondNavRestaurant';
+
 const Restaurant = (props) => {
   return (
-    <p>Restaurant</p>
+    <>
+      <SecondNavRestaurant />
+      <Outlet />
+    </>
   );
 }
 export default Restaurant;

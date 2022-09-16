@@ -24,7 +24,7 @@ const Custom = (props) => {
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 mr-1' /> Lead Time Quotes</li>
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 mr-1' /> Brief introductions</li>
             </ul>
-            <a href='/construction' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
+            <a href='/solutions/consulting' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
           </div>
         </div>
         <div className="w-full md:w-1/2 bg-Consulting bg-center bg-cover">
@@ -48,7 +48,7 @@ const Custom = (props) => {
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 mr-1' /> Printing Products</li>
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 mr-1' /> UI | UX</li>
             </ul>
-            <a href='/construction' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
+            <a href='/solutions/brand_identity' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
           </div>
         </div>
         {/* Develop */}
@@ -68,7 +68,7 @@ const Custom = (props) => {
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 mr-1' /> API & Database</li>
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 mr-1' /> eCommerce Intergration</li>
             </ul>
-            <a href='/construction' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
+            <a href='/solutions/development' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
           </div>
         </div>
         <div className="w-full md:w-1/2 bg-Develop bg-center bg-cover">
@@ -92,7 +92,7 @@ const Custom = (props) => {
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 mr-1' /> SNS Marketing</li>
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 mr-1' /> Influencer Marketing</li>
             </ul>
-            <a href='/construction' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
+            <a href='/solutions/marketing' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
           </div>
         </div>
         {/* Develop */}
@@ -112,7 +112,7 @@ const Custom = (props) => {
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 mr-1' /> Update Support</li>
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><CheckIcon className='w-5 h-5 mr-1' /> Coaching Specialists</li>
             </ul>
-            <a href='/construction' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
+            <a href='/solutions/support' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
           </div>
         </div>
         <div className="w-full md:w-1/2 bg-Service bg-center bg-cover">

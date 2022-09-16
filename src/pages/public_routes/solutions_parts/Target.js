@@ -44,7 +44,7 @@ const Target = (props) => {
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><MinusSmIcon className='w-5 h-5 mr-1' /> Salon Package - Pro</li>
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><MinusSmIcon className='w-5 h-5 mr-1' /> Salon Package - Unlimited</li>
             </ul>
-            <a href='/construction' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
+            <a href='/solutions/nail&hair' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
           </div>
         </div>
         {/* ecommerce */}
@@ -61,7 +61,7 @@ const Target = (props) => {
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><MinusSmIcon className='w-5 h-5 mr-1' /> eCommerce - Pro</li>
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><MinusSmIcon className='w-5 h-5 mr-1' /> eCommerce - Unlimited</li>
             </ul>
-            <a href='/construction' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
+            <a href='/solutions/eCommerces' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
           </div>
         </div>
         <div className="w-full md:w-1/2 bg-eCommerce bg-center bg-cover">
@@ -82,7 +82,7 @@ const Target = (props) => {
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><MinusSmIcon className='w-5 h-5 mr-1' /> Practices - Pro</li>
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><MinusSmIcon className='w-5 h-5 mr-1' /> Practices - Unlimited</li>
             </ul>
-            <a href='/construction' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
+            <a href='/solutions/practices' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
           </div>
         </div>
       </div>

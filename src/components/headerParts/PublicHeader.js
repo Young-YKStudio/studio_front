@@ -8,6 +8,9 @@ import {
   UserGroupIcon,
   ArrowRightIcon,
 } from '@heroicons/react/outline';
+import { GiHairStrands } from 'react-icons/gi';
+import { RiRestaurantFill, RiShoppingCart2Fill } from 'react-icons/ri';
+import { FaRegHospital } from 'react-icons/fa';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Fragment } from 'react';
 import './PublicHeader.css'
@@ -16,31 +19,31 @@ const solutions = [
   {
     name: 'Consulting',
     description: 'Find out what we can help your business to grow, and get an estimation of the plan.',
-    href: '/construction',
+    href: '/solutions/consulting',
     icon: ChatAlt2Icon,
   },
   {
     name: 'Brand Identity',
     description: 'Cultivating new ideas to connecting the dots for customers or users.',
-    href: '/construction',
+    href: '/solutions/brand_identity',
     icon: CubeTransparentIcon,
   },
   {
     name: 'Development',
     description: "From personal projects to eCommerce websites, we are manufacturing lines of codes to make things happen.",
-    href: '/construction',
+    href: '/solutions/development',
     icon: CubeIcon,
   },
   {
     name: 'Digital Marketing',
     description: 'Make things better for reality. Advertising and marketing that pushes projects to success.',
-    href: '/construction',
+    href: '/solutions/marketing',
     icon: PresentationChartBarIcon,
   },
   {
     name: 'Continuing Support',
     description: 'We provide education for our customers, as well as excellent maintenance of the digital products to reach 100% satisfaction.',
-    href: '/construction',
+    href: '/solutions/support',
     icon: UserGroupIcon,
   },
 ];
@@ -49,26 +52,26 @@ const packages = [
   {
     name: 'Restaurants',
     description: 'Online orders, Online Payments, Reservations, all-in-one.',
-    href: '/construction',
-    icon: ChatAlt2Icon,
+    href: '/solutions/restaurants/intro',
+    icon: RiRestaurantFill,
   },
   {
     name: 'Nail | Hair Salons',
     description: 'Online reservations, Designer reserve, Schedules.',
-    href: '/construction',
-    icon: CubeTransparentIcon,
+    href: '/solutions/nail&hair',
+    icon: GiHairStrands,
   },
   {
     name: 'eCommerces',
     description: "Stock management, Order management, Payment gateway",
-    href: '/construction',
-    icon: CubeIcon,
+    href: '/solutions/eCommerces',
+    icon: RiShoppingCart2Fill,
   },
   {
     name: 'Individual Practices',
     description: 'Email & SMS Schedules, Online Reservations, Patient Database',
-    href: '/construction',
-    icon: PresentationChartBarIcon,
+    href: '/solutions/practices',
+    icon: FaRegHospital,
   },
 ];
 
@@ -134,7 +137,7 @@ const PublicHeader = (props) => {
                   leaveFrom="opacity-100 translate-y-0"
                   leaveTo="opacity-0 translate-y-1"
                 >
-                  <Popover.Panel className="absolute z-20 -ml-4 mt-3 transform w-screen max-w-md lg:max-w-2xl lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+                  <Popover.Panel className="absolute z-50 -ml-4 mt-3 transform w-screen max-w-md lg:max-w-2xl lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
                     <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                       <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2">
                         {packages.map((pkg) => (
@@ -154,7 +157,7 @@ const PublicHeader = (props) => {
                         ))}
                       </div>
                       <div className="p-5 bg-gray-50 sm:p-8">
-                        <a href="/solutions" className="-m-3 p-3 flow-root rounded-md hover:bg-gray-100 text-gray-900 hover:text-yellow-600">
+                        <a href="/solutions/solutions" className="-m-3 p-3 flow-root rounded-md hover:bg-gray-100 text-gray-900 hover:text-yellow-600">
                           <div className="flex items-center">
                             <div className="text-base font-medium flex flex-row">See Packages in Detail<ArrowRightIcon className='w-4 h-4 mt-1 ml-2'/></div>
                           </div>
@@ -194,7 +197,7 @@ const PublicHeader = (props) => {
                   leaveFrom="opacity-100 translate-y-0"
                   leaveTo="opacity-0 translate-y-1"
                 >
-                  <Popover.Panel className="absolute z-20 -ml-4 mt-3 transform w-screen max-w-md lg:max-w-2xl lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+                  <Popover.Panel className="absolute z-50 -ml-4 mt-3 transform w-screen max-w-md lg:max-w-2xl lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
                     <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                       <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2">
                         {solutions.map((solution) => (
@@ -214,7 +217,7 @@ const PublicHeader = (props) => {
                         ))}
                       </div>
                       <div className="p-5 bg-gray-50 sm:p-8">
-                        <a href="/solutions" className="-m-3 p-3 flow-root rounded-md hover:bg-gray-100 text-gray-900 hover:text-yellow-600">
+                        <a href="/solutions/solutions" className="-m-3 p-3 flow-root rounded-md hover:bg-gray-100 text-gray-900 hover:text-yellow-600">
                           <div className="flex items-center">
                             <div className="text-base font-medium flex flex-row">See Solutions in Detail<ArrowRightIcon className='w-4 h-4 mt-1 ml-2'/></div>
                           </div>
@@ -252,7 +255,7 @@ const PublicHeader = (props) => {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-20">
+        <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-50">
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
@@ -272,8 +275,8 @@ const PublicHeader = (props) => {
                 </div>
               </div>
               <div className="mt-6">
-                <h3 className='font-bold text-lg mb-4'>Solutions</h3>
-                <nav className="grid grid-cols-2 gap-7">
+                <h3 className='font-bold text-lg mb-4 border-b border-gray-400'>Solutions</h3>
+                <nav className="grid grid-cols-2 gap-7 mt-6">
                   {solutions.map((solution) => (
                     <a
                       key={solution.name}
@@ -287,8 +290,8 @@ const PublicHeader = (props) => {
                     </a>
                   ))}
                 </nav>
-                <h3 className='font-bold text-lg my-4'>Packages</h3>
-                <nav className="grid grid-cols-2 gap-7">
+                <h3 className='font-bold text-lg my-4 mt-8 border-b border-gray-400'>Packages</h3>
+                <nav className="grid grid-cols-2 gap-7 mt-6">
                   {packages.map((pkg) => (
                     <a
                       key={pkg.name}

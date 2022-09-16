@@ -29,6 +29,15 @@ import Nail from './pages/public_routes/solutions_parts/Nail';
 import Commerce from './pages/public_routes/solutions_parts/Commerce';
 import Practices from './pages/public_routes/solutions_parts/Practices';
 import Customized from './pages/public_routes/solutions_parts/Customized';
+import Consulting from './pages/public_routes/solutions_parts/Consulting';
+import Brand from './pages/public_routes/solutions_parts/Brand';
+import Development from './pages/public_routes/solutions_parts/Development';
+import Marketing from './pages/public_routes/solutions_parts/Marketing';
+import Support from './pages/public_routes/solutions_parts/Support';
+
+// Pages-Restaurants
+import Restaurant_Landing from './pages/public_routes/solutions_parts/restaurant_parts/Restaurant_Pages/Restaurant_Landing';
+import Restaurant_Pricing from './pages/public_routes/solutions_parts/restaurant_parts/Restaurant_Pages/Restaurant_Pricing';
 
 // PrivateRoutes
 import Dashboard from './pages/employee_routes/Dashboard';
@@ -37,6 +46,7 @@ import CreditCardPortal from './pages/employee_routes/sections/CreditCardPortal'
 // Components
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Demo from './components/demo/demo';
 
 function App() {
 
@@ -97,6 +107,7 @@ function App() {
         <AnimatePresence>
           <Routes>
               {/* Public Route */}
+              <Route path='demo' element={<Demo />} />
               <Route path='/' element={<Landing />} />
               <Route path='about' element={<About />} />
               <Route path='terms' element={<TOC />} />
@@ -108,7 +119,8 @@ function App() {
               <Route path='solutions' element={<Solutions />} >
                 <Route path='solutions' element={<Solution />} />
                 <Route path='restaurants' element={<Restaurant />} >
-                  
+                  <Route path='intro' element={<Restaurant_Landing />} />
+                  <Route path='pricing' element={<Restaurant_Pricing />} />
                 </Route>
                 <Route path='nail&Hair' element={<Nail />} >
 
@@ -120,6 +132,21 @@ function App() {
 
                 </Route>
                 <Route path='customized' element={<Customized />} >
+
+                </Route>
+                <Route path='consulting' element={<Consulting />} >
+
+                </Route>
+                <Route path='brand_identity' element={<Brand />} >
+
+                </Route>
+                <Route path='development' element={<Development />} >
+
+                </Route>
+                <Route path='marketing' element={<Marketing />} >
+
+                </Route>
+                <Route path='support' element={<Support />} >
 
                 </Route>
               </Route>
