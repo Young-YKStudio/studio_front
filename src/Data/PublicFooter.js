@@ -17,6 +17,6 @@ export const navigation = {
     { name: 'About', href: '/construction' },
     { name: 'Contact', href: '/contact/form' },
     { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/construction' },
+    { name: 'Terms of Service', href: '/terms' },
   ],
 }
