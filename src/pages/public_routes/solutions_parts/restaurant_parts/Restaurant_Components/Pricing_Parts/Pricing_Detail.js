@@ -1,169 +1,10 @@
 import { HiCheck, HiX } from 'react-icons/hi';
 import { useState } from 'react';
-
-const plans = [
-  {
-    title: 'Starter',
-    featured: false,
-    description: 'All your essential business finances, taken care of.',
-    priceMonthly: 5,
-    priceYearly: 56,
-    mainFeatures: [
-      { id: 1, value: 'Basic invoicing' },
-      { id: 2, value: 'Easy to use accounting' },
-      { id: 3, value: 'Mutli-accounts' },
-    ],
-  },
-  {
-    title: 'Scale',
-    featured: true,
-    description: 'The best financial services for your thriving business.',
-    priceMonthly: 19,
-    priceYearly: 220,
-    mainFeatures: [
-      { id: 1, value: 'Advanced invoicing' },
-      { id: 2, value: 'Easy to use accounting' },
-      { id: 3, value: 'Mutli-accounts' },
-      { id: 4, value: 'Tax planning toolkit' },
-      { id: 5, value: 'VAT & VATMOSS filing' },
-      { id: 6, value: 'Free bank transfers' },
-    ],
-  },
-  {
-    title: 'Growth',
-    featured: false,
-    description: 'Convenient features to take your business to the next level.',
-    priceMonthly: 12,
-    priceYearly: 140,
-    mainFeatures: [
-      { id: 1, value: 'Basic invoicing' },
-      { id: 2, value: 'Easy to use accounting' },
-      { id: 3, value: 'Mutli-accounts' },
-      { id: 4, value: 'Tax planning toolkit' },
-    ],
-  },
-]
-const features = [
-  {
-    title: 'Tax Savings',
-    tiers: [
-      { title: 'starter', value: true },
-      { title: 'popular', featured: true, value: true },
-      { title: 'intermediate', value: true },
-    ],
-  },
-  {
-    title: 'Easy to use accounting',
-    tiers: [
-      { title: 'starter', value: true },
-      { title: 'popular', featured: true, value: true },
-      { title: 'intermediate', value: true },
-    ],
-  },
-  {
-    title: 'Multi-accounts',
-    tiers: [
-      { title: 'starter', value: '3 accounts' },
-      { title: 'popular', featured: true, value: 'Unlimited accounts' },
-      { title: 'intermediate', value: '7 accounts' },
-    ],
-  },
-  {
-    title: 'Invoicing',
-    tiers: [
-      { title: 'starter', value: '3 invoices' },
-      { title: 'popular', featured: true, value: 'Unlimited invoices' },
-      { title: 'intermediate', value: '10 invoices' },
-    ],
-  },
-  {
-    title: 'Exclusive offers',
-    tiers: [
-      { title: 'starter', value: false },
-      { title: 'popular', featured: true, value: true },
-      { title: 'intermediate', value: true },
-    ],
-  },
-  {
-    title: '6 months free advisor',
-    tiers: [
-      { title: 'starter', value: false },
-      { title: 'popular', featured: true, value: true },
-      { title: 'intermediate', value: true },
-    ],
-  },
-  {
-    title: 'Mobile and web access',
-    tiers: [
-      { title: 'starter', value: false },
-      { title: 'popular', featured: true, value: true },
-      { title: 'intermediate', value: false },
-    ],
-  },
-]
-const perks = [
-  {
-    title: '24/7 customer support',
-    tiers: [
-      { title: 'starter', value: true },
-      { title: 'popular', featured: true, value: true },
-      { title: 'intermediate', value: true },
-    ],
-  },
-  {
-    title: 'Instant notifications',
-    tiers: [
-      { title: 'starter', value: true },
-      { title: 'popular', featured: true, value: true },
-      { title: 'intermediate', value: true },
-    ],
-  },
-  {
-    title: 'Budgeting tools',
-    tiers: [
-      { title: 'starter', value: true },
-      { title: 'popular', featured: true, value: true },
-      { title: 'intermediate', value: true },
-    ],
-  },
-  {
-    title: 'Digital receipts',
-    tiers: [
-      { title: 'starter', value: true },
-      { title: 'popular', featured: true, value: true },
-      { title: 'intermediate', value: true },
-    ],
-  },
-  {
-    title: 'Pots to separate money',
-    tiers: [
-      { title: 'starter', value: false },
-      { title: 'popular', featured: true, value: true },
-      { title: 'intermediate', value: true },
-    ],
-  },
-  {
-    title: 'Free bank transfers',
-    tiers: [
-      { title: 'starter', value: false },
-      { title: 'popular', featured: true, value: true },
-      { title: 'intermediate', value: false },
-    ],
-  },
-  {
-    title: 'Business debit card',
-    tiers: [
-      { title: 'starter', value: false },
-      { title: 'popular', featured: true, value: true },
-      { title: 'intermediate', value: false },
-    ],
-  },
-]
+import { plans, webHosting, OnlineOrdering, marketings, enhancements } from '../../../../../../Data/Restaurant_Pricing_Details';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-
 
 const Pricing_Detail = (props) => {
   const [ DetailOpen, setDetailOpen ] = useState(false);
@@ -186,7 +27,7 @@ const Pricing_Detail = (props) => {
                 )}
               >
                 <h3
-                  className={classNames(plan.featured ? 'text-indigo-600' : 'text-gray-900', 'text-sm font-bold')}
+                  className={classNames(plan.featured ? 'text-yellow-600' : 'text-gray-900', 'text-md font-bold')}
                 >
                   {plan.title}
                 </h3>
@@ -212,7 +53,7 @@ const Pricing_Detail = (props) => {
                   )}
                 >
                   <dl className="divide-y divide-gray-200">
-                    {features.map((feature) => (
+                    {webHosting.map((feature) => (
                       <div
                         key={feature.title}
                         className="flex items-center justify-between py-3 sm:grid sm:grid-cols-2"
@@ -278,7 +119,7 @@ const Pricing_Detail = (props) => {
                   )}
                 >
                   <dl className="divide-y divide-gray-200">
-                    {perks.map((perk) => (
+                    {OnlineOrdering.map((perk) => (
                       <div key={perk.title} className="flex justify-between py-3 sm:grid sm:grid-cols-2">
                         <dt className="text-sm font-medium text-gray-600 sm:pr-4">{perk.title}</dt>
                         <dd className="text-center sm:px-4">
@@ -310,7 +151,7 @@ const Pricing_Detail = (props) => {
         </div>
       </section>
 
-    {/* Large screen */}
+    {/* ------------- Large screen */}
       <section aria-labelledby="comparison-heading" className="hidden lg:block">
         <div>
           <h2 id="comparison-heading" className="sr-only">
@@ -318,10 +159,10 @@ const Pricing_Detail = (props) => {
           </h2>
         </div>
 
-        <div className="mx-auto mt-24 max-w-7xl px-8">
-          <div className="flex w-full items-stretch border-t border-gray-200">
+        <div className="mx-auto mt-16 max-w-7xl px-8">
+          <div className="flex w-full items-stretch">
             <div className="-mt-px flex w-1/4 items-end py-6 pr-4">
-              <h3 className="mt-auto text-sm font-bold text-gray-900">Catered for business</h3>
+              <h3 className="mt-auto text-lg font-bold text-gray-900">Web Hosting</h3>
             </div>
             {plans.map((plan, index) => (
               <div
@@ -331,12 +172,12 @@ const Pricing_Detail = (props) => {
               >
                 <div
                   className={classNames(
-                    plan.featured ? 'border-indigo-600' : 'border-transparent',
-                    'py-6 border-t-2'
+                    plan.featured ? 'border-yellow-600' : 'border-transparent',
+                    'py-6'
                   )}
                 >
                   <p
-                    className={classNames(plan.featured ? 'text-indigo-600' : 'text-gray-900', 'text-sm font-bold')}
+                    className={classNames(plan.featured ? 'text-yellow-600' : 'text-gray-900', 'text-lg font-bold')}
                   >
                     {plan.title}
                   </p>
@@ -376,7 +217,7 @@ const Pricing_Detail = (props) => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {features.map((feature) => (
+                {webHosting.map((feature) => (
                   <tr key={feature.title}>
                     <th scope="row" className="w-1/4 py-3 pr-4 text-left text-sm font-medium text-gray-600">
                       {feature.title}
@@ -393,7 +234,7 @@ const Pricing_Detail = (props) => {
                           {typeof tier.value === 'string' ? (
                             <span
                               className={classNames(
-                                tier.featured ? 'text-indigo-600' : 'text-gray-900',
+                                tier.featured ? 'text-yellow-600' : 'text-gray-900',
                                 'text-sm font-medium'
                               )}
                             >
@@ -402,7 +243,7 @@ const Pricing_Detail = (props) => {
                           ) : (
                             <>
                               {tier.value === true ? (
-                                <HiCheck className="mx-auto h-5 w-5 text-indigo-600" aria-hidden="true" />
+                                <HiCheck className="mx-auto h-5 w-5 text-green-500" aria-hidden="true" />
                               ) : (
                                 <HiX className="mx-auto h-5 w-5 text-gray-400" aria-hidden="true" />
                               )}
@@ -425,7 +266,7 @@ const Pricing_Detail = (props) => {
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
               <div className="w-1/4 px-4">
-                <div className="h-full w-full rounded-lg ring-2 ring-indigo-600 ring-opacity-100" />
+                <div className="h-full w-full rounded-lg ring-2 ring-yellow-600 ring-opacity-100" />
               </div>
               <div className="w-1/4 pl-4">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
@@ -433,7 +274,9 @@ const Pricing_Detail = (props) => {
             </div>
           </div>
 
-          <h3 className="mt-10 text-sm font-bold text-gray-900">Other perks</h3>
+          {/* Online Ordering */}
+
+          <h3 className="mt-10 text-lg font-bold text-gray-900">Main Features</h3>
 
           <div className="relative mt-6">
             {/* Fake card backgrounds */}
@@ -451,11 +294,11 @@ const Pricing_Detail = (props) => {
             </div>
 
             <table className="relative w-full">
-              <caption className="sr-only">Perk comparison</caption>
+              <caption className="sr-only">Online order comparison</caption>
               <thead>
                 <tr className="text-left">
                   <th scope="col">
-                    <span className="sr-only">Perk</span>
+                    <span className="sr-only">Online Ordering</span>
                   </th>
                   {plans.map((plan) => (
                     <th key={plan.title} scope="col">
@@ -465,27 +308,40 @@ const Pricing_Detail = (props) => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {perks.map((perk) => (
-                  <tr key={perk.title}>
+                {OnlineOrdering.map((feature) => (
+                  <tr key={feature.title}>
                     <th scope="row" className="w-1/4 py-3 pr-4 text-left text-sm font-medium text-gray-600">
-                      {perk.title}
+                      {feature.title}
                     </th>
-                    {perk.tiers.map((tier, index) => (
+                    {feature.tiers.map((tier, index) => (
                       <td
                         key={tier.title}
                         className={classNames(
-                          index === perk.tiers.length - 1 ? 'pl-4' : 'px-4',
+                          index === feature.tiers.length - 1 ? 'pl-4' : 'px-4',
                           'relative w-1/4 py-0 text-center'
                         )}
                       >
                         <span className="relative h-full w-full py-3">
-                          {tier.value === true ? (
-                            <HiCheck className="mx-auto h-5 w-5 text-indigo-600" aria-hidden="true" />
+                          {typeof tier.value === 'string' ? (
+                            <span
+                              className={classNames(
+                                tier.featured ? 'text-yellow-600' : 'text-gray-900',
+                                'text-sm font-medium'
+                              )}
+                            >
+                              {tier.value}
+                            </span>
                           ) : (
-                            <HiX className="mx-auto h-5 w-5 text-gray-400" aria-hidden="true" />
-                          )}
+                            <>
+                              {tier.value === true ? (
+                                <HiCheck className="mx-auto h-5 w-5 text-green-500" aria-hidden="true" />
+                              ) : (
+                                <HiX className="mx-auto h-5 w-5 text-gray-400" aria-hidden="true" />
+                              )}
 
-                          <span className="sr-only">{tier.value === true ? 'Yes' : 'No'}</span>
+                              <span className="sr-only">{tier.value === true ? 'Yes' : 'No'}</span>
+                            </>
+                          )}
                         </span>
                       </td>
                     ))}
@@ -501,7 +357,186 @@ const Pricing_Detail = (props) => {
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
               <div className="w-1/4 px-4">
-                <div className="h-full w-full rounded-lg ring-2 ring-indigo-600 ring-opacity-100" />
+                <div className="h-full w-full rounded-lg ring-2 ring-yellow-600 ring-opacity-100" />
+              </div>
+              <div className="w-1/4 pl-4">
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
+              </div>
+            </div>
+          </div>
+
+          {/* marketings */}
+          <h3 className='mt-10 text-lg font-bold text-gray-900'>Marketing</h3>
+
+          <div className="relative mt-6">
+            {/* Fake card backgrounds */}
+            <div className="pointer-events-none absolute inset-0 flex items-stretch" aria-hidden="true">
+              <div className="w-1/4 pr-4" />
+              <div className="w-1/4 px-4">
+                <div className="h-full w-full rounded-lg bg-white shadow" />
+              </div>
+              <div className="w-1/4 px-4">
+                <div className="h-full w-full rounded-lg bg-white shadow-md" />
+              </div>
+              <div className="w-1/4 pl-4">
+                <div className="h-full w-full rounded-lg bg-white shadow" />
+              </div>
+            </div>
+
+            <table className="relative w-full">
+              <caption className="sr-only">Marketing comparison</caption>
+              <thead>
+                <tr className="text-left">
+                  <th scope="col">
+                    <span className="sr-only">Marketing</span>
+                  </th>
+                  {plans.map((plan) => (
+                    <th key={plan.title} scope="col">
+                      <span className="sr-only">{plan.title} plan</span>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {marketings.map((feature) => (
+                  <tr key={feature.title}>
+                    <th scope="row" className="w-1/4 py-3 pr-4 text-left text-sm font-medium text-gray-600">
+                      {feature.title}
+                    </th>
+                    {feature.tiers.map((tier, index) => (
+                      <td
+                        key={tier.title}
+                        className={classNames(
+                          index === feature.tiers.length - 1 ? 'pl-4' : 'px-4',
+                          'relative w-1/4 py-0 text-center'
+                        )}
+                      >
+                        <span className="relative h-full w-full py-3">
+                          {typeof tier.value === 'string' ? (
+                            <span
+                              className={classNames(
+                                tier.featured ? 'text-yellow-600' : 'text-gray-900',
+                                'text-sm font-medium'
+                              )}
+                            >
+                              {tier.value}
+                            </span>
+                          ) : (
+                            <>
+                              {tier.value === true ? (
+                                <HiCheck className="mx-auto h-5 w-5 text-green-500" aria-hidden="true" />
+                              ) : (
+                                <HiX className="mx-auto h-5 w-5 text-gray-400" aria-hidden="true" />
+                              )}
+
+                              <span className="sr-only">{tier.value === true ? 'Yes' : 'No'}</span>
+                            </>
+                          )}
+                        </span>
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            {/* Fake card borders */}
+            <div className="pointer-events-none absolute inset-0 flex items-stretch" aria-hidden="true">
+              <div className="w-1/4 pr-4" />
+              <div className="w-1/4 px-4">
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-1/4 px-4">
+                <div className="h-full w-full rounded-lg ring-2 ring-yellow-600 ring-opacity-100" />
+              </div>
+              <div className="w-1/4 pl-4">
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
+              </div>
+            </div>
+          </div>
+
+          {/* enhancements */}
+          <h3 className='mt-10 text-lg font-bold text-gray-900'>Enhancements</h3>
+          <div className="relative mt-6">
+            {/* Fake card backgrounds */}
+            <div className="pointer-events-none absolute inset-0 flex items-stretch" aria-hidden="true">
+              <div className="w-1/4 pr-4" />
+              <div className="w-1/4 px-4">
+                <div className="h-full w-full rounded-lg bg-white shadow" />
+              </div>
+              <div className="w-1/4 px-4">
+                <div className="h-full w-full rounded-lg bg-white shadow-md" />
+              </div>
+              <div className="w-1/4 pl-4">
+                <div className="h-full w-full rounded-lg bg-white shadow" />
+              </div>
+            </div>
+
+            <table className="relative w-full">
+              <caption className="sr-only">Marketing comparison</caption>
+              <thead>
+                <tr className="text-left">
+                  <th scope="col">
+                    <span className="sr-only">Marketing</span>
+                  </th>
+                  {plans.map((plan) => (
+                    <th key={plan.title} scope="col">
+                      <span className="sr-only">{plan.title} plan</span>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {enhancements.map((feature) => (
+                  <tr key={feature.title}>
+                    <th scope="row" className="w-1/4 py-3 pr-4 text-left text-sm font-medium text-gray-600">
+                      {feature.title}
+                    </th>
+                    {feature.tiers.map((tier, index) => (
+                      <td
+                        key={tier.title}
+                        className={classNames(
+                          index === feature.tiers.length - 1 ? 'pl-4' : 'px-4',
+                          'relative w-1/4 py-0 text-center'
+                        )}
+                      >
+                        <span className="relative h-full w-full py-3">
+                          {typeof tier.value === 'string' ? (
+                            <span
+                              className={classNames(
+                                tier.featured ? 'text-yellow-600' : 'text-gray-900',
+                                'text-sm font-medium'
+                              )}
+                            >
+                              {tier.value}
+                            </span>
+                          ) : (
+                            <>
+                              {tier.value === true ? (
+                                <HiCheck className="mx-auto h-5 w-5 text-green-500" aria-hidden="true" />
+                              ) : (
+                                <HiX className="mx-auto h-5 w-5 text-gray-400" aria-hidden="true" />
+                              )}
+
+                              <span className="sr-only">{tier.value === true ? 'Yes' : 'No'}</span>
+                            </>
+                          )}
+                        </span>
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            {/* Fake card borders */}
+            <div className="pointer-events-none absolute inset-0 flex items-stretch" aria-hidden="true">
+              <div className="w-1/4 pr-4" />
+              <div className="w-1/4 px-4">
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-1/4 px-4">
+                <div className="h-full w-full rounded-lg ring-2 ring-yellow-600 ring-opacity-100" />
               </div>
               <div className="w-1/4 pl-4">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />

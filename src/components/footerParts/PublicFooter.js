@@ -1,28 +1,5 @@
 import { ArrowUpIcon, PhoneIcon, MailIcon } from '@heroicons/react/solid';
-
-const navigation = {
-  custom: [
-    { name: 'Consulting', href: '/solutions/solutions' },
-    { name: 'Brand Identity', href: '/solutions/solutions' },
-    { name: 'Development', href: '/solutions/solutions' },
-    { name: 'Marketing', href: '/solutions/solutions' },
-    { name: 'Continuing Support', href: '/solutions/solutions' },
-  ],
-  package: [
-    { name: 'Restaurant & Cafe', href: '/solutions/restaurants/intro'},
-    { name: 'Nail & Hair salon', href: '/construction'},
-    { name: 'eCommerce', href: '/construction'},
-    { name: 'Individual Practice', href: '/construction'},
-  ],
-  resources: [
-    { name: 'Sign in', href: '/login' },
-    { name: 'About', href: '/construction' },
-    { name: 'Contact', href: '/contact/form' },
-    { name: 'Disclaimer', href: '/construction' },
-    { name: 'Privacy Policy', href: '/construction' },
-    { name: 'Terms of Service', href: '/construction' },
-  ],
-}
+import { navigation } from '../../Data/PublicFooter';
 
 const backToTop = () => {
   window.scrollTo({
@@ -60,7 +37,7 @@ const PublicFooter = (props) => {
 
             {/* Resources */}
             <div className='px-8 py-4 w-1/2 md:w-48'>
-              <h3 className='font-semibold text-yellow-600 tracking-wide uppercase mb-2'>Solutions</h3>
+              <h3 className='font-semibold text-yellow-600 tracking-wide uppercase mb-2'>Resources</h3>
               <ul>
                 {navigation.resources.map((links) => (
                   <li key={links.name} className='text-sm text-gray-500 hover:text-yellow-600 mb-2'><a href={links.href}>{links.name}</a></li>

@@ -1,63 +1,5 @@
 import { HiCheck } from 'react-icons/hi';
-
-const tiers = [
-  {
-    name: 'Marketing Plus',
-    href: '#',
-    priceMonthly: 399,
-    description: 'Set your restaurant marketing for takeoff. Our marketing team will take care of your marketing.',
-    features: [
-      'Designated account consultant',
-      'Custom online ordering campaigns',
-      'Integration guidance - Google Business',
-      'Mass marketing emails sent by designated account consultant',
-      '2 hours photoshoot in every 6 months',
-      '5 social posts per month to Instagram and Facebook',
-      'Weekly marketing SMS message'
-    ],
-  },
-  {
-    name: 'Design Plus',
-    href: '#',
-    priceMonthly: 1999,
-    description: 'Get elevated design for your business website from our craftmanship.',
-    features: [
-      '4 hours photoshoot session',
-      '30 seconds brand video',
-      'Custom designed marketing email headers',
-      'Logo Designs / redesigns',
-      'Menu Designs',
-      'Designated account designer',
-      'Custom website design'
-    ],
-  },
-  {
-    name: 'Integration Plus',
-    href: '#',
-    priceMonthly: 149,
-    description: 'From waiting list to POS, upgrade your restaurant to the maximum functionality.',
-    features: [
-      'Contactless Menu with QR Codes',
-      'Notify waiting list customer with SMS',
-      'No pagers or additional hardware necessary for using waiting list',
-      'Access to Mobile App',
-      'POS Integration (Stripe, Square)',
-    ],
-  },
-  {
-    name: 'Delivery App Migration',
-    href: '#',
-    priceMonthly: 99,
-    description: 'Consolidate all of your online orders into one tablet. More time for your walk-in customers.',
-    features: [
-      'Access to Mobile App to manage all orders',
-      'Control your online orders',
-      'Supports UberEats, DoorDash, Grubhub',
-      'Consolidated sales reporting',
-      '1 tablet provided'
-    ],
-  },
-]
+import { enhancements } from '../../../../../../Data/Restaurant_Pricing_Enhancements';
 
 const TextAdjustment = (tier) => {
   if (tier.name === 'Marketing Plus') {
@@ -98,7 +40,7 @@ const Pricing_Enhance = (props) => {
           </p>
         </div>
         <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4">
-          {tiers.map((tier) => (
+          {enhancements.map((tier) => (
             <div key={tier.name} className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
               <div className="p-6">
                 <h2 className="text-lg font-medium leading-6 text-gray-900">{tier.name}</h2>

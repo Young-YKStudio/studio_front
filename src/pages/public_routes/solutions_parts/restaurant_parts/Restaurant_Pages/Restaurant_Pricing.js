@@ -1,6 +1,6 @@
 import Pricing_Pricing from "../Restaurant_Components/Pricing_Parts/Pricing_Pricing";
 import Pricing_Enhance from "../Restaurant_Components/Pricing_Parts/Pricing_Enhance";
-import Pricing_Detail from "../Restaurant_Components/Pricing_Parts/Pricing_Detail";
+import Pricing_Details from "../Restaurant_Components/Pricing_Parts/Pricing_Details";
 import Pricing_Statement from "../Restaurant_Components/Pricing_Parts/Pricing_Statement";
 import Pricing_FAQ from "../Restaurant_Components/Pricing_Parts/Pricing_FAQ";
 
@@ -12,7 +12,7 @@ const Restaurant_Pricing = (props) => {
       {/* Enhancements */}
       <Pricing_Enhance />
       {/* Pricing Details */}
-      <Pricing_Detail />
+      <Pricing_Details />
       {/* Statement */}
       <Pricing_Statement />
       {/* FAQ */}

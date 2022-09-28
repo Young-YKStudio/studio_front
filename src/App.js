@@ -21,6 +21,7 @@ import ResetPassword from './pages/account/ResetPassword';
 import Construction from './pages/Contruction';
 import ContactForm from './pages/public_routes/contact_parts/ContactForm';
 import ContactSuccess from './pages/public_routes/contact_parts/ContactSuccess';
+import Privacy from './pages/public_routes/Privacy';
 
 // Pages-solution
 import Solution from './pages/public_routes/solutions_parts/Solution';
@@ -111,6 +112,7 @@ function App() {
               <Route path='/' element={<Landing />} />
               <Route path='about' element={<About />} />
               <Route path='terms' element={<TOC />} />
+              <Route path='privacy' element={<Privacy />} />
               <Route path='projects' element={<Projects />} />
               <Route path='contact' element={<Contact />} >
                 <Route path='form' element={<ContactForm />} />
