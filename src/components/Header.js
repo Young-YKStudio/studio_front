@@ -1,6 +1,7 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout, reset } from '../features/auth/authSlice';
+import { useState, useEffect } from 'react';
 
 import PublicHeader from './headerParts/PublicHeader';
 import ClientHeader from './headerParts/ClientHeader';
@@ -11,6 +12,13 @@ const Header = (props) => {
   // Handlers
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
+
+  const [ currentPath, setCurrentPath ] = useState();
+
+  useEffect(() => {
+    setCurrentPath(location.pathname)
+  }, [location])
 
   const logoutHandler = async (e) => {
     e.preventDefault();
@@ -25,22 +33,26 @@ const Header = (props) => {
     }
   }
 
-  const headerDetailDistributor = (auth) => {
-    if (auth === 'admin') {
-      return <AdminHeader logoutHandler={logoutHandler}/>
-    } else if (auth === 'employee') {
-      return <EmployeeHeader logoutHandler={logoutHandler}/>
-    } else if (auth === 'client') {
-      return <ClientHeader logoutHandler={logoutHandler}/>
+  const headerDetailDistributor = (auth, path) => {
+    if (path === '/demo_fb_starter') {
+      return console.log('demo')
     } else {
-      return <PublicHeader logoutHandler={logoutHandler}/>
+      if (auth === 'admin') {
+        return <AdminHeader logoutHandler={logoutHandler}/>
+      } else if (auth === 'employee') {
+        return <EmployeeHeader logoutHandler={logoutHandler}/>
+      } else if (auth === 'client') {
+        return <ClientHeader logoutHandler={logoutHandler}/>
+      } else {
+        return <PublicHeader logoutHandler={logoutHandler}/>
+      }
     }
   }
 
   return (
     // TODO: import Tailwind components here
     <nav className='header_nav'>
-      {headerDetailDistributor(props.authUser)}
+      {headerDetailDistributor(props.authUser, currentPath)}
     </nav>
   );
 }

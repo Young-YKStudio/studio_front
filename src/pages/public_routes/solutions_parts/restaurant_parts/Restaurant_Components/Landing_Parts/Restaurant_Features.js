@@ -9,7 +9,7 @@ const Restaurant_Features = (props) => {
           More than a restaurant website
         </p>
         <p className="mx-auto mt-5 max-w-prose text-xl text-gray-500">
-          From getting online orders to sending delivery notifications, our restaurant package brings your business the most modern technologies at affordable price.
+          From getting online orders to sending delivery notifications, our restaurant package brings advanced technologies to your business.
         </p>
         <div className="mt-12">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">

@@ -2,7 +2,7 @@ export const plans = [
   {
     name: 'F&B Starter',
     description: 'Perfect for single-location restaurants and cafes looking for an online ordering page to start accepting orders right away.',
-    href: '#'
+    href: '/solutions/restaurants/fb_starter'
   },
   {
     name: 'F&B Pro',

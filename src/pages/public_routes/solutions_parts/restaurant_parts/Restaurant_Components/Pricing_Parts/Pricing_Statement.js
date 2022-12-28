@@ -9,7 +9,7 @@ const Pricing_Statement = (props) => {
           Get Your Restaurant & Cafe Website Today
         </p>
         <p className="mx-auto mt-5 max-w-prose text-xl text-gray-500">
-          Enter required information in the contact form in less than a minute, and we will contact you within 24hrs. 
+          Enter required information in the contact form in less than a minute, and we will contact you at your convenience. 
         </p>
         <div className='mt-8'>
           <YellowBackSmallButton link='/contact/form' text='Get Started' />

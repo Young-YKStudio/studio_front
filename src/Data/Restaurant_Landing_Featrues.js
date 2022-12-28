@@ -6,7 +6,7 @@ import { BiCodeBlock, BiSpreadsheet, BiStoreAlt, BiConversation, BiCog } from 'r
 export const features = [
   {
     name: 'Website hosting, Design',
-    description: 'Our design team builds a mobile-friendly website that is easy to manage, establish your brand, and boosts your SEO.',
+    description: 'Our design team builds a mobile-friendly website that is easy to manage, establishes your brand, and boosts your SEO.',
     icon: BiCodeBlock,
   },
   {
@@ -16,7 +16,7 @@ export const features = [
   },
   {
     name: 'Direct Ordering & Delivery',
-    description: 'Online ordering and delivery is included with every restaurant package. We include order management page for admin, which is extremly easy to control orders.',
+    description: 'Online ordering and delivery is included with every restaurant package. We include order management page for admin, which is easy to control orders.',
     icon: BiStoreAlt,
   },
   {
@@ -31,7 +31,7 @@ export const features = [
   },
   {
     name: 'Admin Integration',
-    description: 'No backend access needed. Our build comes with integrated management screen for you and your employees.',
+    description: 'No backend access needed. Our website comes with integrated management screen for you and your employees.',
     icon: BiCog,
   },
 ]

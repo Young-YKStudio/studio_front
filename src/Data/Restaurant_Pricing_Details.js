@@ -53,8 +53,8 @@ export const webHosting = [
     title: 'Domain named email accounts',
     tiers: [
       { title: 'starter', value: 'Up to 3 accounts' },
-      { title: 'pro', featured: true, value: 'Unlimited accounts' },
-      { title: 'customized', value: 'Unlimited accounts' },
+      { title: 'pro', featured: true, value: 'Up to 100 accounts' },
+      { title: 'customized', value: 'Up to 100 accounts' },
     ],
   },
 ]
@@ -211,7 +211,7 @@ export const marketings = [
     title: 'Email marketing',
     tiers: [
       { title: 'starter', value: 'limited' },
-      { title: 'pro', featured: true, value: 'limited' },
+      { title: 'pro', featured: true, value: 'custom rate' },
       { title: 'customized', value: 'custom rate' },
     ],
   },
@@ -221,9 +221,9 @@ export const enhancements = [
   {
     title: 'F&B Marketing Plus',
     tiers: [
-      { title: 'starter', value: '$399/mo' },
-      { title: 'pro', featured: true, value: '$399/mo' },
-      { title: 'customized', value: '$399/mo' },
+      { title: 'starter', value: '$399/mo, per location' },
+      { title: 'pro', featured: true, value: '$399/mo, per location' },
+      { title: 'customized', value: '$399/mo, per location' },
     ],
   },
   {
@@ -253,9 +253,9 @@ export const enhancements = [
   {
     title: 'Digital Ads',
     tiers: [
-      { title: 'starter', value: 'PPC campaigns' },
-      { title: 'pro', featured: true, value: 'PPC campaigns' },
-      { title: 'customized', value: 'PPC campaigns' },
+      { title: 'starter', value: 'PPC campaigns, YouTube Ads' },
+      { title: 'pro', featured: true, value: 'PPC campaigns, YouTube Ads' },
+      { title: 'customized', value: 'PPC campaigns, YouTube Ads' },
     ],
   },
   {

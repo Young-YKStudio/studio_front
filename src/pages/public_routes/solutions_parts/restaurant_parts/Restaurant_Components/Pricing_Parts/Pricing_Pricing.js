@@ -56,7 +56,7 @@ const Pricing_Pricing = (props) => {
             </div>
 
             <a
-              href="#"
+              href={tier.link}
               className={classNames(
                 tier.mostPopular
                   ? 'bg-yellow-600 text-white hover:bg-white hover:text-yellow-600 hover:border-yellow-600'

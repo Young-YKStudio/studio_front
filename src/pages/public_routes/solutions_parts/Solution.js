@@ -60,7 +60,7 @@ const Solution = (props) => {
         <div className='sm:flex sm:flex-col sm:align-center'>
           <h1 className='text-5xl font-extrabold text-gray-900 sm:text-center'>Solutions</h1>
           <p className='mt-5 text-xl text-gray-500 sm:text-center'>
-            Every business is different. <br />We offer unique digital products for any entrepreneur, and also provide targeted market digital products for sepecified industries. 
+            Every business is different. <br />We offer unique digital products for any entrepreneur, <br /> also provide targeted market digital products for any industries. 
           </p>
           <div className='relative mt-6 bg-gray-100 rounded-lg p-0.5 flex self-center sm:mt-8'>
             {button2(selectedSection)}

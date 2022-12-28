@@ -19,11 +19,11 @@ const Target = (props) => {
             <p className="text-sm font-medium pb-3 border-b border-gray-900">Online orders, Online Payments, Reservations, all-in-one.</p>
             <p className='pt-3'>We know restaurants because we love restaurants - We listen to restaurant owners what are the challenges and resolving them through approachable technology and a strong sense of empathy.</p>
             <ul className='flex flex-col mb-2 pb-2 mt-3'>
-              <li className='px-4 py-2 flex flex-row text-sm font-medium'><MinusSmIcon className='w-5 h-5 mr-1' /> Restaurnt & Cafe Package - Starter</li>
-              <li className='px-4 py-2 flex flex-row text-sm font-medium'><MinusSmIcon className='w-5 h-5 mr-1' /> Restaurnt & Cafe Package - Pro</li>
-              <li className='px-4 py-2 flex flex-row text-sm font-medium'><MinusSmIcon className='w-5 h-5 mr-1' /> Restaurnt & Cafe Package - Unlimited</li>
+              <li className='px-4 py-2 flex flex-row text-sm font-medium'><MinusSmIcon className='w-5 h-5 mr-1' /> F&B Starter</li>
+              <li className='px-4 py-2 flex flex-row text-sm font-medium'><MinusSmIcon className='w-5 h-5 mr-1' /> F&B Pro</li>
+              <li className='px-4 py-2 flex flex-row text-sm font-medium'><MinusSmIcon className='w-5 h-5 mr-1' /> F&B Customized</li>
             </ul>
-            <a href='/solutions/restaurants' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
+            <a href='/solutions/restaurants/intro' className='inline-flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-black hover:text-white hover:bg-yellow-600'>Find out more<ArrowRightIcon className='w-5 h-5 mt-0.5 ml-2'/></a>
           </div>
         </div>
         <div className="w-full md:w-1/2 bg-Restaurant bg-center bg-cover">
@@ -38,7 +38,7 @@ const Target = (props) => {
             </p>
             <p className="text-4xl font-extrabold">Nail & Hair salon</p>
             <p className="text-sm font-medium pb-3 border-b border-gray-900">Our website can provide timeline openings for each designer. </p>
-            <p className="pt-3">Managing reservations can be difficult. We can help you make schedules easay. Your customer can make their reservation according to their designer preferences, styles, and time openings.</p>
+            <p className="pt-3">Managing reservations can be difficult. We can help you handle schedules easily. Your customer can make their reservation according to their designer preferences, styles, and time openings.</p>
             <ul className='flex flex-col mb-2 pb-2 mt-3'>
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><MinusSmIcon className='w-5 h-5 mr-1' /> Salon Package - Starter</li>
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><MinusSmIcon className='w-5 h-5 mr-1' /> Salon Package - Pro</li>
@@ -76,7 +76,7 @@ const Target = (props) => {
             </p>
             <p className="text-4xl font-extrabold">Individual Practice</p>
             <p className="text-sm font-medium pb-3 border-b border-gray-900">Email & SMS Schedules, Online Reservations, Patient Database</p>
-            <p className='pt-3'>Tired of calling patients for their appointments? What if you can inform your patients with one-click? Also we offer cloud storage database so you could save some space for your patient records.</p>
+            <p className='pt-3'>Tired of calling patients for their appointments? What if you can inform your patients with one-click? Also we offer cloud storage database.</p>
             <ul className='flex flex-col mb-2 pb-2 mt-3'>
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><MinusSmIcon className='w-5 h-5 mr-1' /> Practices Package - Starter</li>
               <li className='px-4 py-2 flex flex-row text-sm font-medium'><MinusSmIcon className='w-5 h-5 mr-1' /> Practices - Pro</li>

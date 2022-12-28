@@ -39,6 +39,7 @@ import Support from './pages/public_routes/solutions_parts/Support';
 // Pages-Restaurants
 import Restaurant_Landing from './pages/public_routes/solutions_parts/restaurant_parts/Restaurant_Pages/Restaurant_Landing';
 import Restaurant_Pricing from './pages/public_routes/solutions_parts/restaurant_parts/Restaurant_Pages/Restaurant_Pricing';
+import FB_Starter from './pages/public_routes/solutions_parts/restaurant_parts/Restaurant_Pages/FB_Starter';
 
 // PrivateRoutes
 import Dashboard from './pages/employee_routes/Dashboard';
@@ -47,7 +48,9 @@ import CreditCardPortal from './pages/employee_routes/sections/CreditCardPortal'
 // Components
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Demo from './components/demo/demo';
+
+// Demo
+import DemoFBStarter from './components/demo/FB/demoFBStarter/DemoFBStarter.js';
 
 function App() {
 
@@ -107,70 +110,76 @@ function App() {
         <Header authUser={authUser} />
         <AnimatePresence>
           <Routes>
-              {/* Public Route */}
-              <Route path='demo' element={<Demo />} />
-              <Route path='/' element={<Landing />} />
-              <Route path='about' element={<About />} />
-              <Route path='terms' element={<TOC />} />
-              <Route path='privacy' element={<Privacy />} />
-              <Route path='projects' element={<Projects />} />
-              <Route path='contact' element={<Contact />} >
-                <Route path='form' element={<ContactForm />} />
-                <Route path='success' element={<ContactSuccess />} />
+            {/* Public Route */}
+            <Route path='/' element={<Landing />} />
+            <Route path='about' element={<About />} />
+            <Route path='terms' element={<TOC />} />
+            <Route path='privacy' element={<Privacy />} />
+            <Route path='projects' element={<Projects />} />
+            <Route path='contact' element={<Contact />} >
+              <Route path='form' element={<ContactForm />} />
+              <Route path='success' element={<ContactSuccess />} />
+            </Route>
+            <Route path='solutions' element={<Solutions />} >
+              <Route path='solutions' element={<Solution />} />
+              <Route path='restaurants' element={<Restaurant />} >
+                <Route path='intro' element={<Restaurant_Landing />} />
+                <Route path='pricing' element={<Restaurant_Pricing />} />
+                <Route path='fb_starter' element={<FB_Starter />} />
               </Route>
-              <Route path='solutions' element={<Solutions />} >
-                <Route path='solutions' element={<Solution />} />
-                <Route path='restaurants' element={<Restaurant />} >
-                  <Route path='intro' element={<Restaurant_Landing />} />
-                  <Route path='pricing' element={<Restaurant_Pricing />} />
-                </Route>
-                <Route path='nail&Hair' element={<Nail />} >
-
-                </Route>
-                <Route path='eCommerces' element={<Commerce />} >
-
-                </Route>
-                <Route path='practices' element={<Practices />} >
-
-                </Route>
-                <Route path='customized' element={<Customized />} >
-
-                </Route>
-                <Route path='consulting' element={<Consulting />} >
-
-                </Route>
-                <Route path='brand_identity' element={<Brand />} >
-
-                </Route>
-                <Route path='development' element={<Development />} >
-
-                </Route>
-                <Route path='marketing' element={<Marketing />} >
-
-                </Route>
-                <Route path='support' element={<Support />} >
-
-                </Route>
-              </Route>
-              <Route path='login' element={<LogIn />} />
-              <Route path='register' element={<Register />} />
-              <Route path='forgotpassword' element={<ForgotPassword />} />
-              <Route path='resetpassword/:resetToken' element={<ResetPassword />} />
-              <Route path='*' element={<NotFound />} />
-              <Route path='construction' element={<Construction />} />
-              {/* Client Route */}
-              <Route element={<ClientRoute />}>
+              <Route path='nail&Hair' element={<Nail />} >
 
               </Route>
-              {/* Employee Route */}
-              <Route element={<EmployeeRoute />}>
-                <Route path='dashboard' element={<Dashboard />} />
-                <Route path='cardportal' element={<CreditCardPortal />} />
-              </Route>
-              {/* Admin Route */}
-              <Route element={<AdminRoute />}>
+              <Route path='eCommerces' element={<Commerce />} >
 
               </Route>
+              <Route path='practices' element={<Practices />} >
+
+              </Route>
+              <Route path='customized' element={<Customized />} >
+
+              </Route>
+              <Route path='consulting' element={<Consulting />} >
+
+              </Route>
+              <Route path='brand_identity' element={<Brand />} >
+
+              </Route>
+              <Route path='development' element={<Development />} >
+
+              </Route>
+              <Route path='marketing' element={<Marketing />} >
+
+              </Route>
+              <Route path='support' element={<Support />} >
+
+              </Route>
+            </Route>
+            <Route path='login' element={<LogIn />} />
+            <Route path='register' element={<Register />} />
+            <Route path='forgotpassword' element={<ForgotPassword />} />
+            <Route path='resetpassword/:resetToken' element={<ResetPassword />} />
+            <Route path='*' element={<NotFound />} />
+            <Route path='construction' element={<Construction />} />
+
+            {/* Demo pages */}
+              {/* F&B Starter */}
+              <Route path='demo_fb_starter' element={<DemoFBStarter />} >
+
+              </Route>
+            {/* Client Route */}
+            <Route element={<ClientRoute />}>
+
+            </Route>
+            {/* Employee Route */}
+            <Route element={<EmployeeRoute />}>
+              <Route path='dashboard' element={<Dashboard />} />
+              <Route path='cardportal' element={<CreditCardPortal />} />
+            </Route>
+            {/* Admin Route */}
+            <Route element={<AdminRoute />}>
+
+            </Route>
           </Routes>
         </AnimatePresence>
         <Footer authUser={authUser}/>

@@ -10,7 +10,7 @@ const Restaurant_Rate = (props) => {
             <span className="block text-yellow-600">No hidden fees</span>
           </h1>
           <p className="mx-auto mt-3 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
-            Operating and marketing your business online shouldn't have to be complicated or expensive. The price you lock in today is the one you keep.
+            Operating and marketing your business online shouldn't have to be complicated or expensive. The price you decide today is the one you keep.
           </p>
           <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
             <div className="rounded-md shadow">

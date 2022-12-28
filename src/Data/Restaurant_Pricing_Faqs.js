@@ -22,7 +22,7 @@ export const faqs = [
   {
     question: "Can I get help on learning how to use F&B package products?",
     answer:
-      "F&B packages are also a service from YK Studio, therefore it can also provide services from us on maintenance, on-site support, update support, email and call support, and coaching specialists.",
+      "F&B packages are also a service from YK Studio, therefore it can also provides services from us on maintenance, on-site support, update support, email and call support, and coaching specialists.",
   },
   {
     question: "We are a small business. Why shold we choose an online solution like F&B packages?",
@@ -32,7 +32,7 @@ export const faqs = [
   {
     question: "We already have a menu in PDF format in online. How can you help me update this?",
     answer:
-      "Our development team will help gather what you already have created and transition that to our interactive menu. Any updates will be applied for initial set-up. After website's launch, you can easily update menu on your own.",
+      "Our development team will help gathering what you already have created and transition that to our interactive menu. Any updates will be applied for initial set-up. After website's launch, you can easily update menu on your own.",
   },
   {
     question: "How does F&B packages work?",
@@ -42,16 +42,16 @@ export const faqs = [
   {
     question: "I don't have time or knowledge to market my business. Can you help me?",
     answer:
-      "That is the exactly why we offer F&B Marketing Plus. We assign account consultant for you, provide SNS marketings, send text and email promotions with your apporoval each month.",
+      "That is exactly why we offer F&B Marketing Plus. We assign an account consultant for you, provide SNS marketings, send text and email promotions with your apporoval each month.",
   },
   {
-    question: "How long odes it take to launch a new client's website?",
+    question: "How long does it take to launch a new client's website?",
     answer:
       "The lead time would be about 3-4 weeks.",
   },
   {
-    question: "Other website provider like the Wix is cheaper than your price. Can you match the price?",
+    question: "Other website provider like Wix.com is cheaper than your price. Can you match the price?",
     answer:
-      "Other website provider is cheaper because it is automated for their business model. They require either client to build their own website, or the feature is very limited. We understand food and beverage businesses require more features like menu management, order management, marketings, and online orders. Our F&B packages specialized on those features to maximize your business potential. Price matching is not available.",
+      "Other website provider is cheaper because it is automated for their business model. They require either client to build their own website, or the feature is very limited. We understand food and beverage businesses require more features like menu management, order management, marketings, and online orders. Our F&B packages specialized on those features to maximize your business potential.",
   },
 ]

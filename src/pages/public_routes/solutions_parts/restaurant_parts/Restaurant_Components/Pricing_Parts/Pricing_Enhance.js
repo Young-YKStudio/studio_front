@@ -2,11 +2,11 @@ import { HiCheck } from 'react-icons/hi';
 import { enhancements } from '../../../../../../Data/Restaurant_Pricing_Enhancements';
 
 const TextAdjustment = (tier) => {
-  if (tier.name === 'Marketing Plus') {
+  if (tier.name === 'F&B Marketing Plus') {
     return (
       <span className="text-base font-medium text-gray-500">/mo, per location</span>
     )
-  } else if (tier.name === 'Design Plus') {
+  } else if (tier.name === 'F&B Design Plus') {
     return (
       <span className="text-base font-medium text-gray-500"></span>
     )
@@ -18,7 +18,7 @@ const TextAdjustment = (tier) => {
 }
 
 const PriceAdjustment = (tier) => {
-  if (tier.name === 'Design Plus') {
+  if (tier.name === 'F&B Design Plus') {
     return (
       <span className="text-4xl font-bold tracking-tight text-gray-900">$1,999</span>
     )

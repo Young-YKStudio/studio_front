@@ -14,12 +14,13 @@ export const pricing = {
       ],
       cta: 'Learn More',
       mostPopular: false,
+      link: '/solutions/restaurants/fb_starter',
     },
     {
       title: 'F&B Pro',
       price: 349,
       frequency: '/month',
-      description: 'For single and multi restaurants and cafes looking for an online ordering page and accepting orders, as well as marketing more customers.',
+      description: 'For single and multi restaurants and cafes looking for an online ordering page and accepting orders, as well as marketing to attract more customers.',
       features: [
         'Everything in Starter',
         'Email notification on online orders',
@@ -30,12 +31,13 @@ export const pricing = {
       ],
       cta: 'Learn More',
       mostPopular: true,
+      link: '/solutions/restaurants/fb_pro',
     },
     {
       title: 'F&B Customized',
       price: 'Custom Rate',
       frequency: '',
-      description: 'Excution of any ideas for your restaurant and cafe business. It can be minimal development or maximum solutions to your business.',
+      description: 'Execution of any ideas for your restaurant and cafe business. It can be minimal development or maximum solutions to your business.',
       features: [
         'Custom Mobile App Development',
         'Custom Website',
@@ -45,6 +47,7 @@ export const pricing = {
       ],
       cta: 'Learn More',
       mostPopular: false,
+      link: '/solutions/restaurants/fb_customized',
     },
   ],
 }

@@ -10,15 +10,22 @@ module.exports = {
     minHeight: {
       '100px': '100px',
     },
+    maxWidth: {
+      '1/2': '50%',
+    },
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        arvo: ['"Arvo"', ...defaultTheme.fontFamily.sans]
       },
       spacing: {
         'custom': '38rem',
       },
       rotate: {
         '270': '270deg',
+      },
+      height: {
+        '75': '75vh'
       },
       backgroundImage: theme => ({
         'Consulting': "url('./img/Consulting_Photo.jpg')",
@@ -30,6 +37,15 @@ module.exports = {
         'Hair': "url('./img/hair_photo.jpeg')",
         'eCommerce': "url('./img/ecommerce_photo.jpeg')",
         'Doctor': "url('./img/doctor_photo2.jpg')",
+        'bbq1': "url('./img/demoBbq/bbq1.jpg')",
+        'bbq2': "url('./img/demoBbq/bbq2.jpg')",
+        'bbq3': "url('./img/demoBbq/bbq3.jpg')",
+        'bbq4': "url('./img/demoBbq/bbq4.jpg')",
+        'bbq5': "url('./img/demoBbq/bbq5.jpg')",
+        'bbq6': "url('./img/demoBbq/bbq6.jpg')",
+        'bbq7': "url('./img/demoBbq/bbq7.jpg')",
+        'bbq8': "url('./img/demoBbq/bbq8.jpg')",
+        'bbq9': "url('./img/demoBbq/bbq9.jpg')",
       })
     },
   },

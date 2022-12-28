@@ -3,7 +3,7 @@ export const enhancements = [
     name: 'F&B Marketing Plus',
     href: '#',
     priceMonthly: 399,
-    description: 'Set your restaurant marketing for takeoff. Our marketing team will take care of your marketing.',
+    description: 'Set your restaurant marketing to takeoff. Our marketing team will take care of your marketing.',
     features: [
       'Designated account consultant',
       'Custom online ordering campaigns',
