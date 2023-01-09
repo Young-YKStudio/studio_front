@@ -2,7 +2,7 @@ export const Demo_Button_Black = ({text, link}) => {
   return (
     <a
       href={link}
-      className="flex w-44 justify-center items-center border-2 px-4 py-2 border-black font-bold hover:bg-black hover:text-yellow-400"
+      className="flex w-48 justify-center items-center border-2 px-4 py-2 border-black font-bold hover:bg-black hover:text-yellow-400"
     >{text}</a>
   );
 }

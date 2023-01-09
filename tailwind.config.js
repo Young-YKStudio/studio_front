@@ -20,12 +20,16 @@ module.exports = {
       },
       spacing: {
         'custom': '38rem',
+        '80': '80vw'
       },
       rotate: {
         '270': '270deg',
       },
       height: {
         '75': '75vh'
+      },
+      width: {
+        '80': '80vw'
       },
       backgroundImage: theme => ({
         'Consulting': "url('./img/Consulting_Photo.jpg')",

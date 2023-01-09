@@ -66,7 +66,7 @@ const PublicHeader = (props) => {
                   leaveFrom="opacity-100 translate-y-0"
                   leaveTo="opacity-0 translate-y-1"
                 >
-                  <Popover.Panel className="absolute z-50 -ml-4 mt-3 transform w-screen max-w-md lg:max-w-2xl lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+                  <Popover.Panel className="absolute z-50 -ml-24 mt-3 transform w-[80vw] max-w-md lg:max-w-2xl lg:ml-12 lg:left-1/2 lg:-translate-x-1/2">
                     <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                       <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2">
                         {packages.map((pkg) => (
@@ -126,7 +126,7 @@ const PublicHeader = (props) => {
                   leaveFrom="opacity-100 translate-y-0"
                   leaveTo="opacity-0 translate-y-1"
                 >
-                  <Popover.Panel className="absolute z-50 -ml-4 mt-3 transform w-screen max-w-md lg:max-w-2xl lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+                  <Popover.Panel className="absolute z-50 mt-3 -ml-60 transform w-[80vw] max-w-md lg:max-w-2xl lg:ml-24 lg:mr-48 lg:left-1/2 lg:-translate-x-1/2">
                     <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                       <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2">
                         {solutions.map((solution) => (

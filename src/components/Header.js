@@ -34,7 +34,7 @@ const Header = (props) => {
   }
 
   const headerDetailDistributor = (auth, path) => {
-    if (path === '/demo_fb_starter') {
+    if (path === '/demo_fb_starter' || path === '/demo_fb_starter/menu') {
       return console.log('demo')
     } else {
       if (auth === 'admin') {
