@@ -19,7 +19,7 @@ const DemoFBStarter_Landing1 = (props) => {
 
   const imgButtonPrev = (e) => {
     if (currentImg <= 0) {
-      setCurrentImg(8);
+      setCurrentImg(5);
     } else {
       setCurrentImg(currentImg - 1);
     }
@@ -59,7 +59,7 @@ const DemoFBStarter_Landing1 = (props) => {
       className={tailwindSelector(currentImg)}
     >
       <div className='w-24 flex flex-row justify-center'>
-        <button onClick={imgButtonPrev}><HiOutlineChevronLeft className='text-5xl text-yellow-400 font-bold hover:text-white' /></button>
+        <button onClick={imgButtonPrev}><HiOutlineChevronLeft className='text-5xl text-red-800 font-bold hover:text-white' /></button>
       </div>
       <div className='flex flex-col items-center justify-center'>
         <h1 className='text-7xl text-white font-extrabold'>Let's BBQ</h1>
@@ -67,7 +67,7 @@ const DemoFBStarter_Landing1 = (props) => {
         <Demo_Button_Yellow link="#" text="Order Now" />
       </div>
       <div className='w-24 flex flex-row justify-center'>
-        <button onClick={imgButtonNext}><HiOutlineChevronRight className='text-5xl text-yellow-400 font-bold hover:text-white' /></button>
+        <button onClick={imgButtonNext}><HiOutlineChevronRight className='text-5xl text-red-800 font-bold hover:text-white' /></button>
       </div>
     </div>
   );

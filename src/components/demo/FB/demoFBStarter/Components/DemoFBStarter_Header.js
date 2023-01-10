@@ -27,7 +27,7 @@ const lists = [
   {
     id: 4,
     name: 'Accounts',
-    href: '#',
+    href: '/demo_fb_starter/accounts',
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ const DemoFBStarter_Header = (props) => {
   const [ selected, setSelected ] = useState(false);
 
   return (
-    <div className="fixed w-full top-0 h-24 bg-yellow-400 flex flex-row items-center justify-between">
+    <div className="fixed w-full top-0 h-24 bg-red-800 text-white flex flex-row items-center justify-between">
       <div className='pl-10'>
         <a href="/demo_fb_starter" className='font-bold text-2xl'>YOUR RESTAURANT LOGO</a>
       </div>

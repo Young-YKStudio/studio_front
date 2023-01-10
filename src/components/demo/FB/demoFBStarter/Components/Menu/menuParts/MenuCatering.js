@@ -369,12 +369,12 @@ const MenuCatering = (props) => {
 
   const menuDistributor = (menu) => {
     return <div key={menu.id} className='py-4'>
-      <h3 className="text-xl pb-2">{menu.name}</h3>
+      <h3 className="text-2xl font-bold pb-2">{menu.name}</h3>
 
       {/* description 1 */}
       {
         !!menu.description1 ?
-        <p>{menu.description1}</p>
+        <p className="py-2">{menu.description1}</p>
         :
         null
       }
@@ -382,7 +382,7 @@ const MenuCatering = (props) => {
       {/* description 2 */}
       {
         !!menu.description2 ?
-        <p>{menu.description2}</p>
+        <p className="py-2">{menu.description2}</p>
         :
         null
       }
@@ -390,7 +390,7 @@ const MenuCatering = (props) => {
       {/* description 3 */}
       {
         !!menu.description3 ?
-        <p>{menu.description3}</p>
+        <p className="py-2">{menu.description3}</p>
         :
         null
       }
@@ -399,7 +399,7 @@ const MenuCatering = (props) => {
       {
         !!menu.sandwiches ?
           menu.sandwiches.map((sandwich) => {
-          return <p key={sandwich.id}>{sandwich.name}{sandwich.description? ` - ${sandwich.description}` : null}</p>
+          return <p key={sandwich.id} className='py-2'><span className="font-bold">{sandwich.name}</span> {sandwich.description? ` - ${sandwich.description}` : null}</p>
         })
       : 
         null 
@@ -408,7 +408,7 @@ const MenuCatering = (props) => {
       {/* price1 */}
       {
         !!menu.price1 ?
-        <p>{menu.price1}</p>
+        <p className="font-bold py-2">{menu.price1}</p>
         :
         null
       }
@@ -416,7 +416,7 @@ const MenuCatering = (props) => {
       {/* price2 */}
       {
         !!menu.price2 ?
-        <p>{menu.price2}</p>
+        <p className="font-bold">{menu.price2}</p>
         :
         null
       }
@@ -425,85 +425,98 @@ const MenuCatering = (props) => {
   return (
     <>
       {/* Title */}
-      <div>
-        <h1>Catering Menu</h1>
+      <div className="w-2/5 flex flex-col justify-center items-center flex-nowrap">
+        <h1 className="mb-4 text-4xl font-bold">Catering Menu</h1>
         <button
-          className='flex justify-center border-2 px-4 py-2 mx-2 border-black bg-yellow-400 text-black font-bold hover:bg-black hover:text-yellow-400'
+          className='flex justify-center border-2 px-4 py-2 mx-2 border-white bg-red-800 text-white font-bold hover:bg-white hover:text-red-800 mb-24'
           onClick={(e) => console.log(e, 'clicked')}
         >
           Reserve Catering
         </button>
       </div>
+      
+      <div className="w-4/5 flex flex-row flex-wrap">
 
-      {/* Specialty */}
-      <div>
-        <h2 className="text-2xl font-bold py-4">Specialty Packs</h2>
-        {cateringMenu.map((menu) => {
-          if(menu.category == 'Specialty Packs') {
-            return menuDistributor(menu)
-          }
-        })}
+        {/* Left side */}
+        <div className="lg:w-1/2 lg:px-12 w-full">
+          {/* Specialty */}
+          <div className="mb-8">
+            <h2 className="text-4xl font-bold py-4 border-b-2 border-white mb-4">Specialty Packs</h2>
+            {cateringMenu.map((menu) => {
+              if(menu.category == 'Specialty Packs') {
+                return menuDistributor(menu)
+              }
+            })}
+          </div>
+
+          {/* BBQ */}
+          <div className="mb-8">
+            <h2 className="text-4xl font-bold py-4 border-b-2 border-white mb-4">Barbeque</h2>
+            {cateringMenu.map((menu) => {
+              if(menu.category == 'bbq') {
+                return menuDistributor(menu)
+              }
+            })}
+          </div>
+        </div>
+
+        {/* Right side */}
+        <div className="lg:w-1/2 lg:px-12 w-full">
+
+          {/* Appetizers */}
+          <div className="mb-8">
+            <h2 className="text-4xl font-bold py-4 border-b-2 border-white mb-4">Appetizers</h2>
+            {cateringMenu.map((menu) => {
+              if(menu.category == 'Appetizers') {
+                return menuDistributor(menu)
+              }
+            })}
+          </div>
+
+          {/* sides */}
+          <div className="mb-8">
+            <h2 className="text-4xl font-bold py-4 border-b-2 border-white mb-4">Sides</h2>
+            {cateringMenu.map((menu) => {
+              if(menu.category == 'sides') {
+                return menuDistributor(menu)
+              }
+            })}
+          </div>
+
+          {/* desserts */}
+          <div className="mb-8"> 
+            <h2 className="text-4xl font-bold py-4 border-b-2 border-white mb-4">Desserts</h2>
+            {cateringMenu.map((menu) => {
+              if(menu.category == 'desserts') {
+                return menuDistributor(menu)
+              }
+            })}
+          </div>
+
+          {/* drinks */}
+          <div className="mb-8">
+            <h2 className="text-4xl font-bold py-4 border-b-2 border-white mb-4">Drinks</h2>
+            {cateringMenu.map((menu) => {
+              if(menu.category == 'drinks') {
+                return menuDistributor(menu)
+              }
+            })}
+          </div>
+
+          {/* Extras */}
+          <div className="mb-8">
+            <h2 className="text-4xl font-bold py-4 border-b-2 border-white mb-4">Extras</h2>
+            {cateringMenu.map((menu) => {
+              if(menu.category == 'Extras') {
+                return menuDistributor(menu)
+              }
+            })}
+          </div>
+
+        </div>
+
       </div>
 
-      {/* BBQ */}
-      <div>
-        <h2 className="text-2xl font-bold py-4">Barbeque</h2>
-        {cateringMenu.map((menu) => {
-          if(menu.category == 'bbq') {
-            return menuDistributor(menu)
-          }
-        })}
-      </div>
-
-      {/* Appetizers */}
-      <div>
-        <h2 className="text-2xl font-bold py-4">Appetizers</h2>
-        {cateringMenu.map((menu) => {
-          if(menu.category == 'Appetizers') {
-            return menuDistributor(menu)
-          }
-        })}
-      </div>
-
-      {/* sides */}
-      <div>
-        <h2 className="text-2xl font-bold py-4">Sides</h2>
-        {cateringMenu.map((menu) => {
-          if(menu.category == 'sides') {
-            return menuDistributor(menu)
-          }
-        })}
-      </div>
-
-      {/* desserts */}
-      <div>
-        <h2 className="text-2xl font-bold py-4">Desserts</h2>
-        {cateringMenu.map((menu) => {
-          if(menu.category == 'desserts') {
-            return menuDistributor(menu)
-          }
-        })}
-      </div>
-
-      {/* drinks */}
-      <div>
-        <h2 className="text-2xl font-bold py-4">Drinks</h2>
-        {cateringMenu.map((menu) => {
-          if(menu.category == 'drinks') {
-            return menuDistributor(menu)
-          }
-        })}
-      </div>
-
-      {/* Extras */}
-      <div>
-        <h2 className="text-2xl font-bold py-4">Extras</h2>
-        {cateringMenu.map((menu) => {
-          if(menu.category == 'Extras') {
-            return menuDistributor(menu)
-          }
-        })}
-      </div>
     </>
   );
 }

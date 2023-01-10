@@ -18,7 +18,7 @@ const MenuLanding = (props) => {
     if (page.id === currentPage) {
       return <li>
         <button 
-          className='flex justify-center border-2 px-4 py-2 mx-2 border-black bg-black text-yellow-400 font-bold'
+          className='flex justify-center border-2 px-4 py-2 mx-2 border-white bg-white text-red-800 font-bold'
           key={page.id}
         >
           {page.name}
@@ -27,7 +27,7 @@ const MenuLanding = (props) => {
     } else {
       return <li>
         <button 
-          className='flex justify-center border-2 px-4 py-2 mx-2 border-black bg-yellow-400 text-black font-bold hover:bg-black hover:text-yellow-400'
+          className='flex justify-center border-2 px-4 py-2 mx-2 border-white bg-red-800 text-white font-bold hover:bg-white hover:text-red-800'
           onClick={(e) => setPage(e, id)}
           key={page.id}
         >
@@ -65,10 +65,10 @@ const MenuLanding = (props) => {
   }
 
   return (
-    <>
+    <div className='font-arvo'>
       <DemoHeader />
-      <div className="flex flex-col justify-start font-arvo items-center bg-yellow-400">
-        <div className='bg-yellow-400 mt-24 w-2/5 flex flex-col justify-center items-center'>
+      <div className="flex flex-col justify-start font-arvo items-center bg-red-700 text-white">
+        <div className='mt-24 w-2/5 flex flex-col justify-center items-center'>
           <h1 className='text-5xl font-extrabold p-10 mt-4'>MENU</h1>
           <p className=''>A culinary tour of BBQ traditions from around this great nation and this beautiful planet. 1.8 million years ago, humans first began cooking meat with fire. For some reason, this hasn’t led to world peace, but we’re pretty sure if we fire up enough BBQ, it will.</p>
           <ul className='flex flex-row justify-center py-20'>
@@ -79,12 +79,10 @@ const MenuLanding = (props) => {
             })}
           </ul>
         </div>
-        <div className='w-2/5'>
-          {pageSetter(currentPage)}
-        </div>
+        {pageSetter(currentPage)}
       </div>
       <DemoFooter />
-    </>
+    </div>
   );
 }
 export default MenuLanding;

@@ -54,27 +54,31 @@ const specialMenu = [
 const MenuSpecials = (props) => {
 
   const menuDistributor = (menu) => {
-      return <div key={menu.id}>
-        <h3>{menu.name}</h3>
-        <p>{menu.description}</p>
-        <p>${menu.price}</p>
+      return <div key={menu.id} className='py-4'>
+        <h3 className="text-2xl font-bold">{menu.name}</h3>
+        <p className="py-2">{menu.description}</p>
+        <p className="font-bold pb-2">${menu.price}</p>
       </div>
   }
   return (
-    <>
-      <h2>Combos</h2>
-      {specialMenu.map((menu) => {
-        if(menu.category === 'Combos') {
-          return menuDistributor(menu)
-        }
-      })}
-      <h2>Sandwich Specials</h2>
-      {specialMenu.map((menu) => {
-        if(menu.category === 'Sandwich Specials') {
-          return menuDistributor(menu)
-        }
-      })}
-    </>
+    <div className="w-2/5">
+      <div className="mb-8">
+        <h2 className="text-4xl font-bold py-4 border-b-2 border-white mb-4">Combos</h2>
+        {specialMenu.map((menu) => {
+          if(menu.category === 'Combos') {
+            return menuDistributor(menu)
+          }
+        })}
+      </div>
+      <div className="mb-8">
+        <h2 className="text-4xl font-bold py-4 border-b-2 border-white mb-4">Sandwich Specials</h2>
+        {specialMenu.map((menu) => {
+          if(menu.category === 'Sandwich Specials') {
+            return menuDistributor(menu)
+          }
+        })}
+      </div>
+    </div>
   );
 }
 export default MenuSpecials;

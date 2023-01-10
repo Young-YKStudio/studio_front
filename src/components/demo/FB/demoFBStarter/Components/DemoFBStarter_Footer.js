@@ -2,7 +2,7 @@ import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 
 const DemoFBStarter_Footer = (props) => {
   return (
-    <div className="bg-black text-yellow-400 h-24 flex flex-row justify-between items-center px-10">
+    <div className="bg-red-800 text-white h-24 flex flex-row justify-between items-center px-10">
       {/* icons */}
       <div className="w-1/2">
         <ul className="flex flex-row">

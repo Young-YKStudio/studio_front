@@ -232,100 +232,110 @@ const bbqMenu = [
 const MenuBbq = (props) => {
 
   const menuDistributor = (menu) => {
-    return <div key={menu.id}>
-      <h3>{menu.name}</h3>
+    return <div key={menu.id} className="py-4">
+      <h3 className="text-2xl font-bold">{menu.name}</h3>
       {menu.description == '' ? null :
-        <p>{menu.description}</p>
+        <p className="py-2">{menu.description}</p>
       }
     </div>
   }
   return (
     <>
       {/* BBQ description */}
-      <div>
-        <p>We are open for patio dining! Check out our menu here for specials & dining in!</p>
+      <div className="w-2/5 flex flex-col justify-center items-center flex-nowrap">
+        <p className="mb-4">We are open for patio dining! Check out our menu here for specials & dining in!</p>
         <button 
-            className='flex justify-center border-2 px-4 py-2 mx-2 border-black bg-yellow-400 text-black font-bold hover:bg-black hover:text-yellow-400'
+            className='flex justify-center border-2 px-4 py-2 mx-2 border-white bg-red-800 text-white font-bold hover:bg-white hover:text-red-800 mb-24'
             onClick={(e) => console.log(e, 'clicked')}
           >
             Order Online
         </button>
       </div>
 
-      {/* Barbeque */}
-      <div className="my-4">
-        <h2>Barbeque</h2>
-        <p>Smoked daily, all served with Texas toast & pickles.</p>
-        {bbqMenu.map((menu) => {
-          if(menu.category === 'Barbeque') {
-            return menuDistributor(menu)
-          }
-        })}
-      </div>
+      <div className="w-4/5 flex flex-row flex-wrap">
 
-      {/* Platter */}
-      <div className="mb-4">
-        <h2>Platters and Combos</h2>
-        {bbqMenu.map((menu) => {
-          if(menu.category === 'combos') {
-            return menuDistributor(menu)
-          }
-        })}
-      </div>
+        {/* Left Side */}
+        <div className="lg:w-1/2 lg:px-12 w-full">
+          {/* Barbeque */}
+          <div className="mb-8">
+            <h2 className="text-4xl font-bold py-4 border-b-2 border-white mb-4">Barbeque</h2>
+            <p className="mb-4">Smoked daily, all served with Texas toast & pickles.</p>
+            {bbqMenu.map((menu) => {
+              if(menu.category === 'Barbeque') {
+                return menuDistributor(menu)
+              }
+            })}
+          </div>
 
-      {/* signature Sandwiches */}
-      <div className="mb-4">
-        <h2>Signature Sandwiches</h2>
-        <p>When bread meets what could go between bread, there’s no end to the culinary possibilities.</p>
-        {bbqMenu.map((menu) => {
-          if(menu.category === 'signature') {
-            return menuDistributor(menu)
-          }
-        })}
-      </div>
+          {/* Platter */}
+          <div className="mb-8">
+            <h2 className="text-4xl font-bold py-4 border-b-2 border-white mb-4">Platters and Combos</h2>
+            {bbqMenu.map((menu) => {
+              if(menu.category === 'combos') {
+                return menuDistributor(menu)
+              }
+            })}
+          </div>
 
-      {/* traditional Sandwiches */}
-      <div className="mb-4">
-        <h2>Traditional Sandwiches</h2>
-        <p>1/3 lb. of any off-the-bone meat on a sesame bun with BBQ sauce. Ask not what BBQ can do for the sandwich — just get the sandwich. You can figure out the rest later.</p>
-        {bbqMenu.map((menu) => {
-          if(menu.category === 'traditional') {
-            return menuDistributor(menu)
-          }
-        })}
-      </div>
+          {/* sides */}
+          <div className="mb-8">
+            <h2 className="text-4xl font-bold py-4 border-b-2 border-white mb-4">Sides</h2>
+            <p className="mb-4">A wise leader once said that unless both sides win, no agreement can be permanent. So — just agree to get more sides later.</p>
+            {bbqMenu.map((menu) => {
+              if(menu.category === 'Sides') {
+                return menuDistributor(menu)
+              }
+            })}
+          </div>
 
-      {/* sides */}
-      <div className="mb-4">
-        <h2>Sides</h2>
-        <p>A wise leader once said that unless both sides win, no agreement can be permanent. So — just agree to get more sides later.</p>
-        {bbqMenu.map((menu) => {
-          if(menu.category === 'Sides') {
-            return menuDistributor(menu)
-          }
-        })}
-      </div>
+        </div>
 
-      {/* salad */}
-      <div className="mb-4">
-        <h2>Salads</h2>
-        <p>Crunch crunch, who's there? You, getting a tangy, acidic crunch of greens to really make your plate sing.</p>
-        {bbqMenu.map((menu) => {
-          if(menu.category === 'salad') {
-            return menuDistributor(menu)
-          }
-        })}
-      </div>
+        {/* Right Side */}
+        <div className="lg:w-1/2 lg:px-12 w-full">
+          {/* signature Sandwiches */}
+          <div className="mb-8">
+            <h2 className="lg:text-3xl text-4xl font-bold py-4 border-b-2 border-white mb-4">Signature Sandwiches</h2>
+            <p className="mb-4">When bread meets what could go between bread, there’s no end to the culinary possibilities.</p>
+            {bbqMenu.map((menu) => {
+              if(menu.category === 'signature') {
+                return menuDistributor(menu)
+              }
+            })}
+          </div>
 
-      {/* dessert */}
-      <div className="mb-4">
-        <h2>Dessert</h2>
-        <p>The kind of blue-ribbon treats usually reserved for a State Fair judge, straight to you.</p>
-        {bbqMenu.map((menu) => {
-          if(menu.category === 'dessert') {
-            return menuDistributor(menu)
-          }
-        })}
+          {/* traditional Sandwiches */}
+          <div className="mb-8">
+            <h2 className="lg:text-3xl text-4xl font-bold py-4 border-b-2 border-white mb-4">Traditional Sandwiches</h2>
+            <p className="mb-4">1/3 lb. of any off-the-bone meat on a sesame bun with BBQ sauce. Ask not what BBQ can do for the sandwich — just get the sandwich. You can figure out the rest later.</p>
+            {bbqMenu.map((menu) => {
+              if(menu.category === 'traditional') {
+                return menuDistributor(menu)
+              }
+            })}
+          </div>
+
+          {/* salad */}
+          <div className="mb-8">
+            <h2 className="text-4xl font-bold py-4 border-b-2 border-white mb-4">Salads</h2>
+            <p className="mb-4">Crunch crunch, who's there? You, getting a tangy, acidic crunch of greens to really make your plate sing.</p>
+            {bbqMenu.map((menu) => {
+              if(menu.category === 'salad') {
+                return menuDistributor(menu)
+              }
+            })}
+          </div>
+
+          {/* dessert */}
+          <div className="mb--8">
+            <h2 className="text-4xl font-bold py-4 border-b-2 border-white mb-4">Dessert</h2>
+            <p className="mb-4">The kind of blue-ribbon treats usually reserved for a State Fair judge, straight to you.</p>
+            {bbqMenu.map((menu) => {
+              if(menu.category === 'dessert') {
+                return menuDistributor(menu)
+              }
+            })}
+          </div>
+        </div>
       </div>
     </>
   );
