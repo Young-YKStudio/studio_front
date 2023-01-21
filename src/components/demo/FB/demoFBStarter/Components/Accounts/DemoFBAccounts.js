@@ -26,7 +26,7 @@ const DemoFBAccounts = (props) => {
           <a href="#">Forgot Password?</a>
         </div>
         <div className="mt-8 flex flex-row justify-center text-lg">
-          <a href="#" className="block mr-4 py-2 px-8 border-white border-2 bg-red-800 hover:bg-white hover:text-red-800">Go To Dashbord Sample</a>
+          <a href="dashboard" className="block mr-4 py-2 px-8 border-white border-2 bg-red-800 hover:bg-white hover:text-red-800">Go To Dashbord Sample</a>
         </div>
       </div>
       <DemoFBStarter_Footer />

@@ -53,6 +53,7 @@ import Footer from './components/Footer';
 import DemoFBStarter from './components/demo/FB/demoFBStarter/DemoFBStarter.js';
 import DemoFBMenuLanding from './components/demo/FB/demoFBStarter/Components/Menu/MenuLanding';
 import DemoFBAccounts from './components/demo/FB/demoFBStarter/Components/Accounts/DemoFBAccounts';
+import DemoFBDashboard from './components/demo/FB/demoFBStarter/Landing/DemoFBDashboard';
 
 function App() {
 
@@ -165,11 +166,14 @@ function App() {
             <Route path='construction' element={<Construction />} />
 
             {/* Demo pages */}
-              {/* F&B Starter */}
-              <Route path='demo_fb_starter' element={<DemoFBStarter />} >
-              </Route>
-              <Route path='demo_fb_starter/menu' element={<DemoFBMenuLanding />} />
-              <Route path='demo_fb_starter/accounts' element={<DemoFBAccounts />} />
+            {/* F&B Starter */}
+            <Route path='demo_fb_starter' element={<DemoFBStarter />} >
+            </Route>
+            <Route path='demo_fb_starter/menu' element={<DemoFBMenuLanding />} />
+            <Route path='demo_fb_starter/accounts' element={<DemoFBAccounts />} />
+            <Route path='demo_fb_starter/dashboard' element={<DemoFBDashboard />} />
+
+            
             {/* Client Route */}
             <Route element={<ClientRoute />}>
 
