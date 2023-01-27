@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import DemoFBStarter_Dashboard_Header from "../Components/DemoFBStarter_Dashboard_Header";
-import DemoFBS_Dash_Order from '../Components/dashboard/DemoFBS_Dash_Order';
+import DemoFBS_Dash_Order_Landing from '../Components/dashboard/DemoFBS_Dash_Order_Landing';
 import DemoFBS_Dash_Reservation from '../Components/dashboard/DemoFBS_Dash_Reservation';
 import DemoFBS_Dash_Marketing from '../Components/dashboard/DemoFBS_Dash_Marketing';
 import DemoFBS_Dash_Menu from '../Components/dashboard/DemoFBS_Dash_Menu';
@@ -14,7 +14,7 @@ const DemoFBDashboard = (props) => {
 
   const sectionSelector = (state) => {
     if (state === 'Orders') {
-      return <DemoFBS_Dash_Order />
+      return <DemoFBS_Dash_Order_Landing />
     }
     if (state === 'Reservations') {
       return <DemoFBS_Dash_Reservation />

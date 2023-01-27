@@ -19,7 +19,7 @@ function classNames(...classes) {
 
 const DemoFBStarter_Dashboard_Header = ({setCurrentPage, currentPage }) => {
 
-  const [ sideBarOpen, setSideBarOpen ] = useState(false);
+  const [ sideBarOpen, setSideBarOpen ] = useState(true);
 
   const pageSetter = (e, page) => {
     setCurrentPage(`${page}`)
@@ -32,18 +32,7 @@ const DemoFBStarter_Dashboard_Header = ({setCurrentPage, currentPage }) => {
   }
 
   const sideBarHandler = (e) => {
-    console.log('clicked')
     setSideBarOpen(!sideBarOpen);
-  }
-
-  const tabOut = (state) => {
-    if(state) {
-      return <MdOutlineSwapHoriz className='bg-gray-100 w-9 h-5 inline-lobck text-xl font-medium rounded-full text-gray-700 hover:bg-gray-300'
-      />
-    } else {
-      return <MdOutlineSwapHoriz className='bg-gray-100 w-9 h-5 inline-lobck text-xl font-medium rounded-full text-gray-700 hover:bg-gray-300'
-      />
-    }
   }
 
   const homeFilterLg = (item) => {
@@ -51,10 +40,10 @@ const DemoFBStarter_Dashboard_Header = ({setCurrentPage, currentPage }) => {
       return <div key={item.name} className='flex flex-row justify-between'>
         <p
         onClick={(e) => navigateToStore(e)}
-        className='text-gray-100 hover:text-gray-900 hover:bg-gray-100 group flex items-center px-2 py-2 text-sm font-medium rounded-md'
+        className='text-gray-900 hover:text-white hover:bg-red-800 group flex items-center px-2 py-2 text-sm font-medium rounded-md'
         >
           <item.icon
-            className='text-white group-hover:text-red-600 mr-3 flex-shrink-0 h-6 w-6'
+            className='text-gray-900 group-hover:text-white mr-3 flex-shrink-0 h-6 w-6'
             aria-hidden='true'
           />
           <span className='flex-1'>{item.name}</span>
@@ -62,7 +51,7 @@ const DemoFBStarter_Dashboard_Header = ({setCurrentPage, currentPage }) => {
         <button onClick={sideBarHandler}>
           {
             sideBarOpen ?
-            <MdFirstPage className='w-12 h-7 hover:bg-white hover:text-red-800 rounded-md border-white border-1 text-white' />
+            <MdFirstPage className='w-10 h-10 p-2 hover:bg-red-800 hover:text-white rounded-md border-white border-1 text-gray-900' />
 
             :
             
@@ -76,14 +65,14 @@ const DemoFBStarter_Dashboard_Header = ({setCurrentPage, currentPage }) => {
         onClick={(e) => pageSetter(e, `${item.name}`)}
         className={classNames(
           item.name === currentPage
-            ? 'bg-gray-100 text-gray-900 hover:text-gray-900 hover:bg-gray-100'
-            : 'text-gray-100 hover:text-gray-900 hover:bg-gray-50',
+            ? 'bg-red-800 text-white'
+            : 'text-gray-700 hover:text-white hover:bg-red-800',
           'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
         )}
       >
         <item.icon
           className={classNames(
-            item.name === currentPage ? 'text-red-600' : 'text-gray-100 group-hover:text-gray-500',
+            item.name === currentPage ? 'text-white' : 'text-gray-700 group-hover:text-white',
             'mr-3 flex-shrink-0 h-6 w-6'
           )}
           aria-hidden="true"
@@ -92,7 +81,7 @@ const DemoFBStarter_Dashboard_Header = ({setCurrentPage, currentPage }) => {
         {item.count ? (
           <span
             className={classNames(
-              item.name === currentPage ? 'bg-red-600 text-white' : 'bg-gray-100 group-hover:bg-gray-200 text-red-600',
+              item.name === currentPage ? 'bg-white text-red-800 border-1 border-red-800' : 'bg-red-800 group-hover:bg-white text-white group-hover:text-red-800',
               'ml-3 inline-block py-0.5 px-3 text-xs font-medium rounded-full'
             )}
           >
@@ -109,38 +98,36 @@ const DemoFBStarter_Dashboard_Header = ({setCurrentPage, currentPage }) => {
         <button onClick={sideBarHandler}>
           {
             sideBarOpen ?
-            <MdFirstPage className='w-11 h-11 p-1 mb-1 hover:bg-white hover:text-red-800 rounded-md border-white border-1 text-white' />
-
+            <MdFirstPage className='w-10 h-10 p-1 mb-1 hover:bg-red-800 hover:text-white rounded-md border-white border-1 text-gray-800' />
             :
-            
-            <MdLastPage className='w-11 h-11 p-1 mb-1 hover:bg-white hover:text-red-800 rounded-md border-white border-1 text-white' />
+            <MdLastPage className='w-10 h-10 p-1 mb-1 hover:bg-red-800 hover:text-white rounded-md border-white border-1 text-gray-800' />
           }
         </button>
         <p
         onClick={(e) => navigateToStore(e)}
-        className='text-gray-100 hover:text-gray-900 hover:bg-gray-100 group flex items-center justify-center px-2 py-2 text-sm font-medium rounded-md'
+        className='text-gray-100 hover:text-gray-900 hover:bg-red-800 group flex items-center justify-center px-2 py-2 text-sm font-medium rounded-md'
         >
           <item.icon
-            className='text-white group-hover:text-red-600 flex-shrink-0 h-6 w-6'
+            className='text-gray-800 group-hover:text-white flex-shrink-0 h-6 w-6'
             aria-hidden='true'
           />
         </p>
       </div>
     } else {
-      return <div className='flex justify-center'>
+      return <div key={item.name} className='flex justify-center'>
         <p
           key={item.name}
           onClick={(e) => pageSetter(e, `${item.name}`)}
           className={classNames(
             item.name === currentPage
-              ? 'bg-gray-100 text-gray-900 hover:text-gray-900 hover:bg-gray-100'
-              : 'text-gray-100 hover:text-gray-900 hover:bg-gray-50',
+              ? 'bg-red-800'
+              : 'text-white hover:text-white hover:bg-red-800',
             'group flex px-2 py-2 text-sm font-medium rounded-md'
           )}
         >
           <item.icon
             className={classNames(
-              item.name === currentPage ? 'text-red-600' : 'text-gray-100 group-hover:text-gray-500',
+              item.name === currentPage ? 'text-white' : 'text-gray-800 group-hover:text-white',
               'flex-shrink-0 h-6 w-6'
             )}
             aria-hidden="true"
@@ -151,7 +138,7 @@ const DemoFBStarter_Dashboard_Header = ({setCurrentPage, currentPage }) => {
           :
           item.count ? 
           <div>
-            <p className='text-white'>•</p>
+            <p className='text-red-800'>•</p>
           </div>
           : null
         }
@@ -162,16 +149,16 @@ const DemoFBStarter_Dashboard_Header = ({setCurrentPage, currentPage }) => {
   return (
     <>
       <div className='h-screen bg-red-800 px-3 py-6'>
-        <div className="flex min-h-0 flex-1 flex-col rounded-lg border-2 border-gray-300 bg-red-700 h-full">
+        <div className="flex min-h-0 flex-1 flex-col rounded-lg border-2 border-gray-300 bg-white h-full">
           <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
 
             {/* TODO: should be changed according to the states */}
             <div className="flex flex-shrink-0 items-center px-4 justify-center">
-              <p className='text-xl font-bold text-white'>
+              <p className='text-xl font-bold text-red-800'>
                 { sideBarOpen? "Restaurant Logo" : "RL" }
               </p>
             </div>
-            <nav className="mt-5 flex-1 space-y-1 bg-red-700 px-4" aria-label="Sidebar">
+            <nav className="mt-5 flex-1 space-y-1 bg-white px-4" aria-label="Sidebar">
               { sideBarOpen ? navigation.map((item) => (
                 homeFilterLg(item)   
               ))
