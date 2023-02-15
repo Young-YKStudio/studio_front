@@ -3,7 +3,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import Spinner from "../../../../../spinner";
 import { MdPrint, MdPhoneForwarded } from 'react-icons/md';
 
-import { OrderTypeDistributor, OrderPlacedTimeDistributor, OrderPaidDistributor, TaxCal, OrderStatusInModal } from "./components/functions_elements";
+import { OrderTypeDistributor, OrderPlacedTimeDistributor, OrderPaidDistributor, TaxCal, OrderStatusInModal, SetButtonDistributor } from "./components/functions_elements";
 
 const DemoFBS_Dash_Order_Modal = ({ open, setOpen, selectedOrder }) => {
 
@@ -34,7 +34,6 @@ const DemoFBS_Dash_Order_Modal = ({ open, setOpen, selectedOrder }) => {
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
             <Dialog.Panel className="overflow-hidden w-80 md:w-1/2 rounded-lg bg-white px-4 pt-5 pb-4 shadow-xl transition-all sm:my-8 sm:p-6">
-              {console.log(selectedOrder)}
               {
                 !!selectedOrder ?
                 <>
@@ -101,7 +100,7 @@ const DemoFBS_Dash_Order_Modal = ({ open, setOpen, selectedOrder }) => {
                         Close
                       </button>
                     </div>
-                    <button className="w-1/2 px-4 py-2 bg-red-600 text-white rounded-md border-transparent border-2 mx-1 hover:bg-red-900 shadow-sm">Set as Preparing</button>
+                    {SetButtonDistributor(selectedOrder.orderState, selectedOrder.isPaid)}
                   </div>
 
                 </>

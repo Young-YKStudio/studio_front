@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export const OrderTypeDistributor = (string) => {
   if (string === 'Uber Eats') {
     return <p className="truncate rounded-full bg-green-700 text-white px-2.5 py-1 text-xs font-medium flex items-center mx-2">{string}</p>
@@ -7,6 +9,12 @@ export const OrderTypeDistributor = (string) => {
   }
   if (string === 'GrubHub') {
     return <p className="truncate rounded-full bg-orange-500 text-white px-2.5 py-1 text-xs font-medium flex items-center mx-2">{string}</p>
+  }
+  if (string === 'Pick Up') {
+    return <p className="truncate rounded-full bg-blue-500 text-white px-2.5 py-1 text-xs font-medium flex items-center mx-2">{string}</p>
+  }
+  if (string === 'Delivery') {
+    return <p className="truncate rounded-full bg-purple-500 text-white px-2.5 py-1 text-xs font-medium flex items-center mx-2">{string}</p>
   }
 }
 
@@ -26,6 +34,15 @@ export const OrderStatusInModal = (string) => {
   if(string === 'New') {
     return <p className="text-red-600 text-sm">* New Order *</p>
   }
+  if(string === 'Preparing') {
+    return <p className="text-blue-600 text-sm">* Preparing... *</p>
+  }
+  if(string === 'Ready') {
+    return <p className="text-green-600 text-sm">* This order is Ready *</p>
+  }
+  if(string === 'Completed') {
+    return <p className="text-red-600 text-sm">* Completed Order *</p>
+  }
 }
 
 export const TaxCal = (total, taxRate, type) => {
@@ -41,4 +58,27 @@ export const TaxCal = (total, taxRate, type) => {
   if(type === 'subTotal') {
     return subTotal.toFixed(2);
   }
+}
+
+export const SetButtonDistributor = (page, state) => {
+  if (page === 'New') {
+    return <button className="w-1/2 px-4 py-2 bg-red-600 text-white rounded-md border-transparent border-2 mx-1 hover:bg-red-900 shadow-sm">Set as Preparing</button>
+  }
+  if (page === 'Preparing') {
+    return <button className="w-1/2 px-4 py-2 bg-blue-600 text-white rounded-md border-transparent border-2 mx-1 hover:bg-blue-900 shadow-sm">Set as Ready</button>
+  }
+  if (page === 'Ready' && state) {
+    return <button className="w-1/2 px-4 py-2 bg-green-600 text-white rounded-md border-transparent border-2 mx-1 hover:bg-green-900 shadow-sm">Set as Completed</button>
+  }
+  if (page === 'Ready' && !state) {
+    return <button className="w-1/2 px-4 py-2 bg-green-600 text-white rounded-md border-transparent border-2 mx-1 hover:bg-green-900 shadow-sm">Collect Payment</button>
+  }
+  if (page === 'Completed') {
+    return <button className="w-1/2 px-4 py-2 bg-red-600 text-white rounded-md border-transparent border-2 mx-1 hover:bg-red-900 shadow-sm">Undo Complete</button>
+  }
+}
+
+export const dateSetter = (type) => {
+  let convertedDate = moment(type).format('LL LTS')
+  return convertedDate
 }
