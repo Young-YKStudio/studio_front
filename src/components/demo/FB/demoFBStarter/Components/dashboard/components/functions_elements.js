@@ -1,5 +1,7 @@
 import moment from 'moment';
 
+// Orders
+
 export const OrderTypeDistributor = (string) => {
   if (string === 'Uber Eats') {
     return <p className="truncate rounded-full bg-green-700 text-white px-2.5 py-1 text-xs font-medium flex items-center mx-2">{string}</p>
@@ -81,4 +83,39 @@ export const SetButtonDistributor = (page, state) => {
 export const dateSetter = (type) => {
   let convertedDate = moment(type).format('LL LTS')
   return convertedDate
+}
+
+// Reservations
+
+export const reservationButtonDistributor = (status, type) => {
+  if (status === 'New' && type === 'Confirm') {
+    return <button className='w-1/2 px-4 py-2 bg-green-600 text-white rounded-md border-transparent border-2 mx-1 hover:bg-green-900 shadow-sm'>Confirm</button>
+  }
+  if (status === 'New' && type === 'Deny') {
+    return <button className='w-1/2 px-4 py-2 bg-red-600 text-white rounded-md border-transparent border-2 mx-1 hover:bg-red-900 shadow-sm'>Deny</button>
+  }
+  if (status === 'Confirmed' && type === 'Complete') {
+    return <button className='w-full px-4 py-2 bg-green-600 text-white rounded-md border-transparent border-2 mx-1 hover:bg-green-900 shadow-sm'>Complete</button>
+  }
+  if (status === 'Denied' && type === 'Cancel Deny') {
+    return <button className='w-full px-4 py-2 bg-green-600 text-white rounded-md border-transparent border-2 mx-1 hover:bg-green-900 shadow-sm'>Cancel Deny</button>
+  }
+  if (status === 'Completed' && type === 'Cancel Complete') {
+    return <button className='w-full px-4 py-2 bg-red-600 text-white rounded-md border-transparent border-2 mx-1 hover:bg-red-900 shadow-sm'>Cancel Complete</button>
+  }
+}
+
+export const reservationTitleDistributor = (status) => {
+  if (status === 'New') {
+    return <p className='text-xl font-bold text-blue-800'>Reservation Info - New</p>
+  }
+  if (status === 'Confirmed') {
+    return <p className='text-xl font-bold text-green-800'>Reservation Info - Confirmed</p>
+  }
+  if (status === 'Denied') {
+    return <p className='text-xl font-bold text-red-800'>Reservation Info - Denied</p>
+  }
+  if (status === 'Completed') {
+    return <p className='text-xl font-bold text-gray-800'>Reservation Info - Denied</p>
+  }
 }

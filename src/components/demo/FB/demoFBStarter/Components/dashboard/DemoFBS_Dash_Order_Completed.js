@@ -9,12 +9,12 @@ const DemoFBS_Dash_Order_Completed = ({receivedOrders, modalHandler}) => {
         receivedOrders.length > 0 ?
         <>
           <p className="text-3xl text-white border-b-2 border-double pb-2 my-6 font-bold truncate lg:text-center">Completed Orders :&nbsp;&nbsp;<span>{receivedOrders.length} </span></p>
-          <ul role="list" className="flex lg:flex-row flex-col lg:flex-wrap w-full lg:justify-center">
+          <ul role="list" className="grid grid-cols-1 lg:grid-cols-2 w-full gap-4 px-4">
           {
             !!receivedOrders ?
             receivedOrders.map((order) => (
               <li key={order.orderId} 
-                className="rounded-lg bg-white drop-shadow-xl hover:drop-shadow-none hover:outline hover:outline-white hover:outline-offset-2 w-full lg:w-2/5 lg:mr-3 mb-3"
+                className="rounded-lg bg-white drop-shadow-xl hover:drop-shadow-none hover:outline hover:outline-white hover:outline-offset-2 w-full lg:mr-3"
                 onClick={(e) => modalHandler(e, order.orderId)}
               >
                 <div className="flex flex-col w-full items-center justify-start space-x-6 p-6">

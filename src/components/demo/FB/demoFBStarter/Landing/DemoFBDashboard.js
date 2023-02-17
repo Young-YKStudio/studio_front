@@ -3,7 +3,7 @@ import { useState } from 'react';
 import DemoFBStarter_Dashboard_Header from "../Components/DemoFBStarter_Dashboard_Header";
 import DemoFBS_Dash_Order_Landing from '../Components/dashboard/DemoFBS_Dash_Order_Landing';
 import DemoFBS_Dash_Reservation from '../Components/dashboard/reservations/DemoFBS_Dash_Reservation';
-import DemoFBS_Dash_Marketing from '../Components/dashboard/DemoFBS_Dash_Marketing';
+import DemoFBS_Dash_Marketing from '../Components/dashboard/marketing/DemoFBS_Dash_Marketing';
 import DemoFBS_Dash_Menu from '../Components/dashboard/DemoFBS_Dash_Menu';
 import DemoFBS_Dash_Statistic from '../Components/dashboard/DemoFBS_Dash_Statistic';
 import DemoFBS_Dash_Setting from '../Components/dashboard/DemoFBS_Dash_Setting';

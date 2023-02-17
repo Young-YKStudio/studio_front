@@ -26,6 +26,7 @@ export const ordersAPI = [
         reservedDate: '2022-02-17T13:24:00',
         reservedName: 'Annie',
         reservedContact: '+1-202-555-0170',
+        reservedEmail: 'jane@Cooper@example.com',
         comment: 'Window seat please',
         reservationStatus: 'New'
       },
@@ -54,6 +55,18 @@ export const ordersAPI = [
         },
       ],
     },
+    reservations: [
+      {
+        reservationId: '00002',
+        party: 4,
+        reservedDate: '2022-02-18T13:24:00',
+        reservedName: 'John Smith',
+        reservedContact: '+1-202-555-0170',
+        reservedEmail: 'johnSmith@Cooper@example.com',
+        comment: 'Window seat please',
+        reservationStatus: 'Confirmed'
+      },
+    ],
     orderTotal: 110,
     orderTax: 0.0848,
     orderSubTotal: 119.33,
@@ -96,6 +109,7 @@ export const ordersAPI = [
         reservedName: 'Chris',
         reservedContact: '+1-202-555-0171',
         comment: 'Quiet seat please',
+        reservedEmail: 'chrisFisher@Cooper@example.com',
         reservationStatus: 'New'
       },
     ],
@@ -162,6 +176,18 @@ export const ordersAPI = [
         },
       ],
     },
+    reservations: [
+      {
+        reservationId: '00004',
+        party: 6,
+        reservedDate: '2022-02-17T13:24:00',
+        reservedName: 'Alex Myers',
+        reservedContact: '+1-202-555-0173',
+        comment: 'Quiet seat please',
+        reservedEmail: 'alexMyers@Cooper@example.com',
+        reservationStatus: 'Denied'
+      },
+    ],
     orderTotal: 50.5,
     orderTax: 0.0848,
     orderSubTotal: 54.79,
@@ -191,6 +217,18 @@ export const ordersAPI = [
         },
       ],
     },
+    reservations: [
+      {
+        reservationId: '00005',
+        party: 6,
+        reservedDate: '2022-02-17T13:24:00',
+        reservedName: 'Mav',
+        reservedContact: '+1-202-555-0174',
+        comment: 'Quiet seat please',
+        reservedEmail: 'mavColins@Cooper@example.com',
+        reservationStatus: 'Completed'
+      },
+    ],
     orderTotal: 46,
     orderTax: 0.0848,
     orderSubTotal: 39.01,
@@ -230,3 +268,16 @@ export const ordersAPI = [
     orderedWhen: '10m ago'
   },
 ]
+
+let customerList = [];
+
+ordersAPI.forEach(order => {
+  if(order.customer) {
+    customerList.push(order.customer)
+  }
+})
+
+export const marketingAPI = {
+  emailCount: 94,
+  customer: customerList,
+}

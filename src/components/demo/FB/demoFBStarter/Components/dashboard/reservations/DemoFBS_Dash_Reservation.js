@@ -9,17 +9,16 @@ import DemoFBS_Dash_Reservation_Modal from './DemoFBS_Dash_Reservation_Modal';
 const DemoFBS_Dash_Reservation = (props) => {
 
   const [ newReservations, setNewReservations ] = useState([]);
+  const [ confirmedReservations, setConfirmedReservations ] = useState([]);
+  const [ completedReservations, setCompletedReservations ] = useState([]);
+  const [ allReservations, setAllReservations ] = useState([]);
   const [ seletedReservation, setSelectedReservation ] = useState();
   const [ isModalOpen, setIsModalOpen ] = useState(false);
-
-  // useEffect(() => {
-  //   console.log(seletedReservation, isModalOpen, 'at useEffect')
-  // }, [seletedReservation])
 
   const reservationClickHandler = async (e, id) => {
     e.preventDefault();
 
-    let foundReservation = await newReservations.find(reservation => reservation.reservationId === id)
+    let foundReservation = await allReservations.find(reservation => reservation.reservationId === id)
     if(foundReservation) {
       await setSelectedReservation(foundReservation)
       setIsModalOpen(true)
@@ -38,14 +37,30 @@ const DemoFBS_Dash_Reservation = (props) => {
     const orderDistributor = (arry) => {
       if(isMounted && arry.length > 0 ) {
         let reservationNew = [];
-        let foundReservation = arry.forEach(order => {
+        let reservationConfirmed = [];
+        let reservationCompleted = [];
+        let reservationAll = [];
+        arry.forEach(order => {
           if(!!order.reservations) {
-            let newFoundReservation = order.reservations.find(reservation => reservation.reservationStatus === 'New')
-            reservationNew.push(newFoundReservation)
+            order.reservations.find(reservation => {
+              reservationAll.push(reservation)
+              if(reservation.reservationStatus === 'New') {
+                reservationNew.push(reservation)
+              }
+              if(reservation.reservationStatus === 'Confirmed') {
+                reservationConfirmed.push(reservation)
+              }
+              if(reservation.reservationStatus === 'Denied' || reservation.reservationStatus === 'Completed') {
+                reservationCompleted.push(reservation)
+              }
+            })
           }
         });
 
+        setAllReservations(reservationAll)
         setNewReservations(reservationNew)
+        setConfirmedReservations(reservationConfirmed)
+        setCompletedReservations(reservationCompleted)
       }
     }
 
@@ -56,15 +71,14 @@ const DemoFBS_Dash_Reservation = (props) => {
   }, [ordersAPI])
 
   return (
-    <section className="bg-red-800 w-full">
-      {ordersAPI && <p>reservation section</p>}
+    <section className="bg-red-800 w-full p-4">
       {/* New Reservations */}
       <DemoFBS_Dash_Reservation_New newReservations={newReservations} reservationClickHandler={reservationClickHandler} />
       {/* Current Reservations */}
-      <DemoFBS_Dash_Reservation_Current />
+      <DemoFBS_Dash_Reservation_Current confirmedReservations={confirmedReservations} reservationClickHandler={reservationClickHandler} />
       {/* Completed Reservations */}
-      <DemoFBS_Dash_Reservation_Completed />
-      {isModalOpen && <DemoFBS_Dash_Reservation_Modal seletedReservation={seletedReservation} modalCloser={modalCloser}/>}
+      <DemoFBS_Dash_Reservation_Completed completedReservations={completedReservations} reservationClickHandler={reservationClickHandler} />
+      {isModalOpen && <DemoFBS_Dash_Reservation_Modal seletedReservation={seletedReservation} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />}
     </section>
   );
 }
